@@ -67,6 +67,34 @@
             margin-left: 2px;
             /* background-color: rgb(185, 247, 240); */
         }
+
+        .gallery-image {
+            display: inline-block;
+            padding-top: 0.5rem;
+            max-width: 100%;
+        }
+        .gallery-image:first-child {
+            padding-right: 0.5rem;
+        }
+    </style>
+    <style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+    
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
@@ -96,7 +124,17 @@
         process.
     </p>
     <p>
-        <iframe src="https://www.youtube.com/embed/fT1KsDtxfwE" frameborder="0" allowfullscreen=""></iframe>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/fT1KsDtxfwE' frameborder='0' allowfullscreen></iframe></div>
+    </p>
+    <p>
+        <img src="./final.jpg" alt="screenshot" class="gallery-image" />
+    </p>
+    <p>
+        <img src="./scope.jpg" alt="screenshot" class="gallery-image" />
+    </p>
+    <p>
+        <img src="./3dprint.jpg" alt="screenshot" class="gallery-image" />
+        <img src="./ccd.jpg" alt="test print" class="gallery-image" />
     </p>
 </body>
 

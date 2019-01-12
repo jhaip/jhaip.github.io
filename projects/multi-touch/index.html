@@ -68,6 +68,25 @@
             /* background-color: rgb(185, 247, 240); */
         }
     </style>
+    <style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+    
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
@@ -92,14 +111,14 @@
         The last version I made was desk-sized and used <a href="https://mrl.nyu.edu/~jhan/ftirsense/">frustrated total internal reflection</a> to detect touches.
     </p>
     <p>
-        <iframe width="420" height="315" src="//www.youtube.com/embed/fzCoJs_QDy0" frameborder="0" allowfullscreen=""></iframe>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/fzCoJs_QDy0' frameborder='0' allowfullscreen></iframe></div>
     </p>
     <p>A cheap first prototype was made from a torn apart computer monitor and two infrared lasers with plane lenses
         sitting on top of a carboard box. A modified PS3 Eye webcam at the bottom of the box could see the reflected IR light
         from fingers when touching the screen. Image processing software turned the camera's image into mouse clicks.
     </p>
     <p>
-        <iframe width="420" height="315" src="//www.youtube.com/embed/XSxBjWZeFY4" frameborder="0" allowfullscreen=""></iframe>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/XSxBjWZeFY4' frameborder='0' allowfullscreen></iframe></div>
     </p>
     
 </body>

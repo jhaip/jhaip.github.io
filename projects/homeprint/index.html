@@ -67,6 +67,34 @@
             margin-left: 2px;
             /* background-color: rgb(185, 247, 240); */
         }
+
+        .gallery-image {
+            display: inline-block;
+            padding-top: 0.5rem;
+            max-width: 100%;
+        }
+        .gallery-image:first-child {
+            padding-right: 0.5rem;
+        }
+    </style>
+    <style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+    
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
@@ -87,6 +115,10 @@
                 Research done with the Mediated Matter group of the MIT Media Lab. The project explored the possibilities of building
                 scale 3D printing using 3D printed insulation foam molds filled with concrete. I developed HomePrint: a program which
                 was the interface for building designers to turn 3D models of buildings into printed objects.
+            </p>
+            <p>
+                <img src="./screenshot.jpg" alt="screenshot" class="gallery-image" />
+                <img src="./print.jpg" alt="test print" class="gallery-image" />
             </p>
 </body>
 
