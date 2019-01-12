@@ -5,105 +5,13 @@
     <title>Jacob Haip</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: 'Lora', serif;
-            font-size: 1.3rem;
-            line-height: 2.1rem;
-            margin: 0 auto;
-            padding: 0 0.5rem;
-            background-color: #f2f5ce;
-            max-width: 740px;
-        }
-
-        p {
-            font-family: 'Lora', serif;
-            font-size: 1.3rem;
-            line-height: 2rem;
-        }
-
-        h1 {
-            font-family: 'Lora', serif;
-            font-size: 3rem;
-            line-height: 3.9rem;
-        }
-
-        ul.dashed {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul.dashed>li {
-            margin-left: 15px;
-        }
-
-        /* Prevent nested li's from getting messed up */
-        ul.dashed>li::before {
-            content: "- ";
-            margin-left: -15px;
-        }
-
-        li {
-            margin: 0 0 0.6rem;
-            padding: 0;
-        }
-
-        li ul {
-            padding-left: 2rem;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .inlinelist a {
-            padding-right: 1rem;
-        }
-
-        sup {
-            padding: 2px;
-            margin-left: 2px;
-            /* background-color: rgb(185, 247, 240); */
-        }
-
-        .gallery-image {
-            display: inline-block;
-            padding-top: 0.5rem;
-            max-width: 100%;
-        }
-        .gallery-image:first-child {
-            padding-right: 0.5rem;
-        }
-    </style>
-    <style>
-        .embed-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-        }
-    
-        .embed-container iframe,
-        .embed-container object,
-        .embed-container embed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <link href="/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-    <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
 </head>
 
@@ -117,13 +25,14 @@
                 in Solidworks which we used to laser cut and machine the robot from aluminum and acrylic. We placed 3rd overall and
                 special award for our use of ROS.
             </p>
+            <p>
+                <img src="./robot.jpg" alt="robot" class="gallery-image" />
+            </p>
             <p> 
                 <div class='embed-container'><iframe src='https://www.youtube.com/embed/YlDMnqRzJIk?start=8940' frameborder='0'
                         allowfullscreen></iframe></div>
             </p>
-            <p>
-                <img src="./robot.jpg" alt="robot" class="gallery-image" />
-            </p>
+            
 </body>
 
 </html>
