@@ -1,37 +1,52 @@
 body {
     /* font-family: 'Lora', serif; */
-    font-family: 'Inconsolata', monospace;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 2.1rem;
-    margin: 0 auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
     padding: 0 0.5rem;
-    /* background-color: #f2f5ce; */
-    max-width: 740px;
+    max-width: 900px;
     color: #333;
 }
 
+body.writing {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+body.writing ul {
+    font-family: 'IBM Plex Sans', serif;
+}
+
 body.homepage {
-    font-family: 'Inconsolata', monospace;
-            font-size: 1.5rem;
-            line-height: 2.5rem;
-            margin-left: 2rem;
-            margin-right: 2rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.homepage p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
 }
 
 .homepage h1 {
-    font-family: 'Lora', serif;
-            font-size: 3rem;
-            line-height: 3.9rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 3rem;
+    line-height: 3.9rem;
 }
 
 p {
-    font-family: 'Lora', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 2rem;
 }
 
 h1 {
-    font-family: 'Lora', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 3rem;
     line-height: 3.9rem;
 }
