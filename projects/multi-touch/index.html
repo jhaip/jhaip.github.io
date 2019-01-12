@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2.1rem;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+            background-color: #f2f5ce;
+            max-width: 740px;
+        }
+
+        p {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            line-height: 3.9rem;
+        }
+
+        ul.dashed {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.dashed>li {
+            margin-left: 15px;
+        }
+
+        /* Prevent nested li's from getting messed up */
+        ul.dashed>li::before {
+            content: "- ";
+            margin-left: -15px;
+        }
+
+        li {
+            margin: 0 0 0.6rem;
+            padding: 0;
+        }
+
+        li ul {
+            padding-left: 2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inlinelist a {
+            padding-right: 1rem;
+        }
+
+        sup {
+            padding: 2px;
+            margin-left: 2px;
+            /* background-color: rgb(185, 247, 240); */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <a href="/"><< Home</a>
+    <h1>Multi-touch Screens</h1>
+    <p><small>2009 &ndash; 2011</small></p>
+    <p>
+        After watching a video of Jeff Han's <a href="https://www.youtube.com/watch?v=ysEVYwa-vHM">wall–sized multi-touch screen</a>,
+        I wanted my own. I started frequenting the <a href="http://nuigroup.com/forums">Natural User Interface Forums</a> and was
+        introduced to the world of <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">Human&ndash;computer interaction</a> research.
+    </p>
+    <p>
+        The last version I made was desk-sized and used <a href="https://mrl.nyu.edu/~jhan/ftirsense/">frustrated total internal reflection</a> to detect touches.
+    </p>
+    <p>
+        <iframe width="420" height="315" src="//www.youtube.com/embed/fzCoJs_QDy0" frameborder="0" allowfullscreen=""></iframe>
+    </p>
+    <p>A cheap first prototype was made from a torn apart computer monitor and two infrared lasers with plane lenses
+        sitting on top of a carboard box. A modified PS3 Eye webcam at the bottom of the box could see the reflected IR light
+        from fingers when touching the screen. Image processing software turned the camera's image into mouse clicks.
+    </p>
+    <p>
+        <iframe width="420" height="315" src="//www.youtube.com/embed/XSxBjWZeFY4" frameborder="0" allowfullscreen=""></iframe>
+    </p>
+    
+</body>
+
+</html>

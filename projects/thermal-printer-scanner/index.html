@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2.1rem;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+            background-color: #f2f5ce;
+            max-width: 740px;
+        }
+
+        p {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            line-height: 3.9rem;
+        }
+
+        ul.dashed {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.dashed>li {
+            margin-left: 15px;
+        }
+
+        /* Prevent nested li's from getting messed up */
+        ul.dashed>li::before {
+            content: "- ";
+            margin-left: -15px;
+        }
+
+        li {
+            margin: 0 0 0.6rem;
+            padding: 0;
+        }
+
+        li ul {
+            padding-left: 2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inlinelist a {
+            padding-right: 1rem;
+        }
+
+        sup {
+            padding: 2px;
+            margin-left: 2px;
+            /* background-color: rgb(185, 247, 240); */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <a href="/"><< Home</a>
+    <h1>Receipt Paper Printer & Scanner</h1>
+    <p><small>January 11, 2019</small></p>
+    <p>
+        For MIT's 6.115 Digital Electronics Lab final project I made a minature printer and scanner that you could play Tic Tac
+        Toe with. The printer was a
+        <a href="https://www.adafruit.com/products/597">Thermal Printer</a>.
+        The scanner I designed myself out of a
+        <a href="http://www.digikey.com/product-detail/en/TSL1406RS/TSL1406-RS-ND/3095065">TSL1406</a> Linear Sensor Array and a
+        laser cut acrylic body. The brains of the project was the Cypress PSoC 5. To play a game of Tic Tac Toe, the PSoC would
+        first print out a Tic Tac Toe board on the printer with the computer's first move. You could then tear off the board,
+        play your move by marking it with a pen or pencil, and then scan it. The PSoC would process the image to figure out
+        what move you played, what move the computer would play in rebuttle, and then print out a new board to repeat the
+        process.
+    </p>
+    <p>
+        <iframe src="https://www.youtube.com/embed/fT1KsDtxfwE" frameborder="0" allowfullscreen=""></iframe>
+    </p>
+</body>
+
+</html>

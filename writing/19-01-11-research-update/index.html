@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2.1rem;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+            background-color: #f2f5ce;
+            max-width: 740px;
+        }
+
+        p {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            line-height: 3.9rem;
+        }
+
+        ul.dashed {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.dashed>li {
+            margin-left: 15px;
+        }
+
+        /* Prevent nested li's from getting messed up */
+        ul.dashed>li::before {
+            content: "- ";
+            margin-left: -15px;
+        }
+
+        li {
+            margin: 0 0 0.6rem;
+            padding: 0;
+        }
+
+        li ul {
+            padding-left: 2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inlinelist a {
+            padding-right: 1rem;
+        }
+
+        sup {
+            padding: 2px;
+            margin-left: 2px;
+            /* background-color: rgb(185, 247, 240); */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+<a href="/"><< Home</a>
+<h1>Programmable Space - Research Update</h1>
+<p><small>January 11, 2019</small></p>
+<p>
+I am interested in blurring the boundary between the digital and the physical, and making it easier for everyone to do
+this as well.
+</p>
+<p>
+Previously, I was working on a tools for seeing<sup><a href="https://medium.com/@jhaip/seeing-space-89104020793">1</a></sup>
+and
+to help tell a more
+complete story of the making process<sup><a href="https://www.youtube.com/watch?v=LqK2nMTE90g">2</a></sup>.
+</p>
+<p>
+But I heard of <a href="https://dynamicland.org/">Dynamicland</a> and thought it would address of the
+limitations that bothered me about the seeing tools I was making. Dynamicland is a communal computer, designed for
+agency, not apps, where people can think like whole humans. Dynamicland puts the computer into the room instead in a
+tiny box of pixels. In my seeing tools, it felt wrong to put a tool meant to help people see on a screen when the
+primary work was going on in the room. Also I wondered how people would make custom visualizations. I have a background
+in data visualization so I could quickly write code to make a custom graph of data but generally this would be
+challenging. My seeing tool relied primarily on pre-made visualizations and there was a bad jump in complexity and
+knowledge if you wanted to extend the system. I liked that Dynamicland's generic programming model made it equally easy
+to make graphics, robots, and improve the system itself.
+</p>
+
+<p>
+<img src="https://www.notion.so/3744a449aeab4e91b432bfd74135d8de#55a1c83eacf345ab8c72820e2ca9f413" />
+<caption>A tiny text editor inside of premade visualizations in my previous project the Robot "Seeing Tool"</caption>
+</p>
+<p>
+I wanted to judge the merit of these ideas for myself but Dynamicland is a building in Oakland, CA where the physical
+building and the coding environment are one in the same. Dynamicland is not an app that can be downloaded and run in a
+new space. A new space with new people should develop a system that works best for them.
+</p>
+<p>
+I tried out a couple open-source projects related to "programmable spaces"&mdash;<a href="https://paperprograms.org/">Paper Programs</a> by <a href="http://janpaulposma.nl/">JP Posma</a>
+and <a href="https://github.com/living-room">Living Room</a> by the Recurse Center.
+Both were impressively complete but I felt both
+were too closely tied to JavaScript and using a web browser. Programming was still done on a computer or in a web
+browser. I also felt both had too strong of a difference between the programs you could make with the system, and the
+system code itself.
+</p>
+<p>
+Therefore, I started to make my own "programmable space" where everything in the system would be done in the room
+without needing to switch back to a traditional programming experience on a
+<a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> 
+<a href="https://en.wikipedia.org/wiki/Operating_system">OS</a>.
+</p>
+<p>
+Initially I tried to use a Dynamicland-like setup with cameras and projectors pointing at papers with colored dots.
+Each paper was an independent program. Papers in the room would have code written on them. If the paper was out in the
+room, then anyone in the room could look at the paper and read what it does. Likewise, if the paper was out in the room
+then the cameras could see it (using the colored dots) and cause the paper's code to run. The one-to-one mapping
+between what people can see and what programs were running helps the system be understandable. Projectors would project
+the output of the programs on the paper as nonintrusive display. The text editor used to edit papers was itself another
+paper you would point that the program you want to edit.
+</p>
+<p>
+Programs interact by:
+<ul class="dashed">
+<li>Stating facts about the world. Facts are any normal sentence like "The temperature is 20 C". Facts are stored in a
+global "tuplespace". This idea is similar to the <a href="https://en.wikipedia.org/wiki/Linda_(coordination_language)">LINDA coordination language</a>.
+I inherited this metaphor from the <a href="https://livingroomresearch.tumblr.com/post/171022587132/living-room-in-context">Living Room</a>
+project.
+</li>
+<li>
+Subscribing to facts in the world said by other programs using fill-in-the-blank sentences like "When the temperature
+is X", run some code using the variable X. This way of matching data is close to
+<a href="https://en.wikipedia.org/wiki/Datalog">Datalog</a>.
+</li>
+</ul>
+</p>
+<p>
+This setup worked but was hard to make reliable and keep physically rearranged. The cameras and projectors never felt
+invisible. The point of the programmable room was to forget about them like you forget about the lights in your
+ceiling. I was also spending too much time on the code to run the camera and projectors and not spending enough time on
+the thing I cared about - learning what it's like to work in a programmable room.
+</p>
+<p>
+To refocus, I scaled back and made a limited but complete demo of a programmable room with a complete editing
+experience outside a traditional GUI OS.
+</p>
+
+<p>
+    <img src="https://www.notion.so/3744a449aeab4e91b432bfd74135d8de#f06879fefc7f46e1b2f82b3dfdc7d818" />
+</p>
+<p>
+The room had an always on text-editor and a grid of 9 editable programs. The papers were fixed on the wall, so I
+avoided needing a camera to detect papers. The fixed papers also made the projector easy to set up. Having 9 pre-made
+programs avoided the issue of updating and creating the physical papers.
+</p>
+<p>
+After playing around for a few days, I discovered that the room did give promising looking at what it would be like to
+have a programmable room.
+<ul class="dashed">
+<li>
+The always-on text editor, live reloading programs, and a easy and extensible language for communicating between
+things in the room felt like the right format to orchestrate the multiple things running in the room. It was very
+satisfying to see something in the room respond within a couple seconds just as easily as I had done only on a screen
+in the past.
+</li>
+<li>
+Besides the dropdown to select what program to edit, the room was successfully a stable and complete editing
+experience away from a GUI OS. It was refreshing to remove all distracting apps.
+</li>
+<li>
+I am happy that the 9 editable programs are very similar and live in the same extensible system as the programs used
+to bootstrap the system. Although the boot papers weren't editable in this version, they exist, and in the future there
+can be a gentle transition between making fun programs and editing the system itself. I think this is the key idea to
+making the space work best for the specific place and people that work inside it.
+</li>
+</ul>
+</p>
+
+<p>
+    <img src="https://www.notion.so/3744a449aeab4e91b432bfd74135d8de#7441a3bfa60a488283e6a3016f03e61f" />
+</p>
+
+<p>
+But some limitations hurt the experience:
+<ul class="dashed">
+    <li>
+Selecting a program to edit using a website dropdown was a useful compromise for this demo but it doesn't make sense
+to use a web page just to select something in a room. A better alternative to selecting an option from a list is a
+physical object like a dial. This was a good example of how mixing existing computer systems and the programmable room
+doesn't work well - you are either in one medium or the other.
+</li>
+<li>
+The code is too closely tied to existing programming languages. It reads and looks like code instead of prose. There
+is no clear separation between the systems language (how things in the room talk) and the logic-level code.
+</li>
+<li>
+Having the editor away from the code. The screen displaying the code editor was on the desk at a different angle than
+the 9 paper grid. Because it was just me sitting in a swivel chair in a small room this wasn't too annoying but it felt
+wrong. Like going somewhere else to edit instead of editing in the context of the programs.
+</li>
+<li>
+Errors in the code weren't displayed. I got by because I was familiar with the system, the language, the code, and
+because the programs were short. I would often get the wording of facts or subscriptions wrong. ("Wish light strand was
+blue" vs "Wish lights are blue")
+</li>
+<li>
+The room was set up with Information displays on the walls and people sitting in the middle looking at the wall. This
+is the "command center" setup. To make the system more social and collaborative it should be the opposite: information
+in the middle with people crowded around it in small groups.
+</li>
+</ul>
+</p>
+<p>
+Therefore, I want to addressing the following things in the future to make the system more natural:
+<ul class="dashed">
+<li>Replace the website dropdown but a physical object for selecting things like a dial.</li>
+<li>Making the code more human friendly via a custom pre-parser so the code looks less like code.</li>
+</ul>
+</p>
+</body>
+
+</html>
