@@ -49,6 +49,7 @@ h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 3rem;
     line-height: 3.9rem;
+    margin-bottom: 0;
 }
 
 ul.dashed {
