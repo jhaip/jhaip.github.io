@@ -57,13 +57,15 @@ ul.dashed {
 }
 
 ul.dashed>li {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 /* Prevent nested li's from getting messed up */
 ul.dashed>li::before {
-    content: "- ";
-    margin-left: -15px;
+    content: '\2013\2002';
+    color: #a9a9a9;
+    /* color: #42d686; */
+    margin-left: -20px;
 }
 
 li {
