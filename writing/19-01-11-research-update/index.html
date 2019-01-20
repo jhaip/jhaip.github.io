@@ -8,6 +8,13 @@
     <link href="/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body class="writing">
@@ -73,20 +80,9 @@ then the cameras could see it (using the colored dots) and cause the paper's cod
 between what people can see and what programs were running helps the system be understandable. Projectors would project
 the output of the programs on the paper as nonintrusive display. The "text editor" used to edit papers was itself another
 paper that edited the code of the paper it was pointing at.
-</p>
-<p>
-Programs interact by:
-<ul class="dashed">
-<li>Stating facts about the world. Facts are any normal sentence like "The temperature is 20 C". Facts are stored in a
-global "tuplespace". This idea is similar to the <a href="https://en.wikipedia.org/wiki/Linda_(coordination_language)">LINDA coordination language</a>.
-I inherited this metaphor from the <a href="https://livingroomresearch.tumblr.com/post/171022587132/living-room-in-context">Living Room</a>
-project.
-</li>
-<li>Subscribing to facts in the world stated by other programs using fill-in-the-blank sentences like "When the temperature
-is X" then run some code using the variable X. This way of matching data is similar to
-<a href="https://en.wikipedia.org/wiki/Datalog">Datalog</a>.
-</li>
-</ul>
+Programs communicate by writing and reading to a global "tuplespace" &mdash;
+I think of it as a whiteboard, just another object in the room.
+See the Appendix for more details about this and the code.
 </p>
 <p>
 This setup worked but was hard to make reliable and keep physically rearranged. The cameras and projectors never felt
@@ -99,9 +95,6 @@ To refocus, I scaled back and made a limited but complete demo of a programmable
 experience outside a traditional GUI OS.
 </p>
 
-<!-- <p>
-    <img src="grid-room-illustration.svg" />
-</p> -->
 <p>
 The room had an always on text-editor and a grid of 9 editable programs. The papers were fixed on the wall so I
 avoided needing a camera to detect papers. The fixed papers also made the projector easy to set up. Having 9 pre-made
@@ -151,6 +144,129 @@ in the middle with people crowded around it in small groups.
 </ul>
 </p>
 <p>More experimenting to do...</p>
+
+<hr>
+
+<h3>
+    Appendix
+</h3>
+<p>
+    Programs interact by:
+    <ul class="dashed">
+        <li>Stating facts about the world. Facts are any normal sentence like <span class="fact">The temperature is 20 C</span>. Facts are
+            stored in a
+            global tuplespace. This idea is similar to the <a href="https://en.wikipedia.org/wiki/Linda_(coordination_language)">LINDA
+                coordination language</a>.
+            I inherited this metaphor from the <a href="https://livingroomresearch.tumblr.com/post/171022587132/living-room-in-context">Living
+                Room</a>
+            project.
+        </li>
+        <li>Subscribing to facts in the world stated by other programs using fill-in-the-blank sentences like
+            <span class="fact">When the temperature is X</span> then run some code using the variable X. This way of matching data is similar to
+            <a href="https://en.wikipedia.org/wiki/Datalog">Datalog</a>.
+        </li>
+    </ul>
+</p>
+
+<p>
+Below I describe most of programs that bootstrap this programmable room demo, including the programs I made while playing in the room.
+</p>
+
+<p>
+    <img src="./setup.jpg" alt="setup" class="gallery-imagee" />
+</p>
+
+<p>Broker:</p>
+
+<ul class="dashed">
+<li>A persistent program that all programs connect to.</li>
+<li>Manages updates to the tuplespace via claims.</li>
+<li>Notifies programs about changes to the tuplespace based on their subscriptions.</li>
+</ul>
+
+<p>Boot programs:</p>
+
+<ul class="dashed">
+<li>Claim that 9 papers exist at a certain coordinates in the room, claim that the text editor exists at certain
+coordinates in the room, start all the other boot papers.</li>
+<li>Boot papers communicate by claiming and subscribing to facts, but also interact with the Linux operating system 
+to do things like start/stop code and draw graphics.</li>
+<li>One important boot paper listens for claims about graphics and displays them on the projector.</li>
+</ul>
+
+<p>Inputs:</p>
+
+<ul class="dashed">
+<li>Keyboard claims <span class="fact">last key pressed was X</span>
+    <ul>
+        <li><small>The keyboard is connected via bluetooth to a Raspberry Pi that makes the claim.</span></small></li>
+    </ul>
+</li>
+<li>Keypad claims <span class="fact">last keypad button pressed was X</span>
+    <ul>
+        <li><small>The keypad is wired to a Particle Photon that sends a HTTP request to a computer that makes the claim.</small></li>
+    </ul>
+</li>
+</ul>
+
+<p>Editable programs that extend the language:</p>
+
+<ul class="dashed">
+<li>Claim <span class="fact">time is X</span> every 1/2 second</li>
+<li>Listen for claims from program Y like <span class="fact">wish I was labeled X</span> then the wrap the text lines and claim that the text
+graphics should be drawn on Y</li>
+<li>Listen for claims from program Y like <span class="fact">wish I was highlighted X</span> then claim that rectangle graphics with color X
+should be drawn on the paper Y</li>
+</ul>
+
+<p>Basic use of extended language:</p>
+
+<ul class="dashed">
+<li>Claim <span class="fact">wish I was highlighted yellow</span></li>
+</ul>
+
+<p>Programs that use the inputs:</p>
+
+<ul class="dashed">
+<li>Subscribe to <span class="fact">last key pressed was X</span> and then claim <span class="fact">wish I was labeled LAST KEY PRESSED: X</span></li>
+<li>Subscribe to <span class="fact">last keypad button pressed was X</span> and then claim <span class="fact">wish I was labeled Editing program X</span> and draw the
+red rectangle graphics on the border of the program being edited</li>
+</ul>
+
+<p>Text editor:</p>
+
+<ul class="dashed">
+<li>Subscribe to the source code of each paper.</li>
+<li>Subscribe to <span class="fact">last keypad button pressed was X</span> to load the source code for the corresponding program X.</li>
+<li>Subscribe to <span class="fact">last key pressed was X</span> to apply that key to the source code. On "Control-S" claim that the temporary
+source code should be the new source code for the program and claim that the program should be restarted.</li>
+<li>Claim that new text graphics should be drawn to match the source code any time there is a change in source code,
+keypad button press, or keyboard button press.</li>
+<li>Do text editor logic like wrapping lines, editing and deleting characters.</li>
+</ul>
+
+<p>
+    <small>The text editor is a prime example of how the system is bootstrapped. It is not a program that itself
+        manages a GUI
+        window or directly listens to keyboard events. It simply uses existing claims and wishes that certain things
+        would
+        happen. Its ~200 lines of code are close to minimum viable description of what a "text editor" does. Because the editor itself is within the system you
+        can improve the
+        editing experience using the editor itself. The concept of a"text editor" also takes on a new meaning not as
+        something that is given to you but a set of capabilities that could be achieved in many ways through any
+        program that makes
+        the appropriate claims.</small>
+</p>
+
+<p>Programs that use the claim about time:</p>
+
+<ul class="dashed">
+<li>When <span class="fact">time is X</span> then claim <span class="fact">wish I was labeled X</span></li>
+<li>When <span class="fact">time is X</span>, if the number of seconds is even then
+    claim <span class="fact">wish I was highlighted red</span> and claim <span class="fact">it is go time</span></li>
+<li>When <span class="fact">time is X</span> claim that circle and line graphics should be drawn at certain angles to make it look like a clock</li>
+</ul>
+
 </body>
 
 </html>
