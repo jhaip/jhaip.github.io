@@ -22,10 +22,8 @@ I am interested in blurring the boundary between the digital and the physical, a
 this as well.
 </p>
 <p>
-Previously, I was working on a tools for seeing<sup><a href="https://medium.com/@jhaip/seeing-space-89104020793">1</a></sup>
-and
-to help tell a more
-complete story of the making process<sup><a href="https://www.youtube.com/watch?v=LqK2nMTE90g">2</a></sup>.
+Previously, I was working on tools to <a href="https://www.youtube.com/watch?v=LqK2nMTE90g">tell a more
+complete story of the making process</a> and tools for <a href="https://medium.com/@jhaip/seeing-space-89104020793">seeing live data</a>.
 But I heard of <a href="https://dynamicland.org/">Dynamicland</a> and thought it addressed some of the
 limitations that bothered me about the seeing tools I was making.
 </p>
@@ -34,14 +32,14 @@ agency, not apps, where people can think like whole humans. Dynamicland puts the
 tiny box of pixels. In my seeing tools, it felt wrong to put a tool meant to help people see on a screen when the
 primary work was going on in the room. Also I wondered how people would make custom visualizations. I have a background
 in data visualization so I could quickly write code to make a custom graph of data but generally this would be
-challenging. My seeing tool relied primarily on pre-made visualizations and there was a bad jump in complexity and
-knowledge if you wanted to extend the system. I liked that Dynamicland's generic programming model made it equally easy
+challenging. There was a bad jump in complexity and knowledge if you wanted to extend the system.
+I was inspired by Dynamicland's generic programming model made it equally easy
 to make graphics, robots, and improve the system itself.
 </p>
 
 <p>
 <img src="seeing-space-small-code.png" />
-<small>A tiny text editor inside of premade visualizations in my previous project the Robot "Seeing Tool"</small>
+<small>A tiny text editor inside of premade visualizations in my previous project the <a href="https://www.youtube.com/watch?v=LqK2nMTE90g">Robot "Seeing Tool"</a></small>
 </p>
 <p>
 I wanted to judge the merit of these ideas for myself but Dynamicland is a building in Oakland, CA where the physical
@@ -68,8 +66,8 @@ Each paper was an independent program. Papers in the room would have code writte
 room, then anyone in the room could look at the paper and read what it does. Likewise, if the paper was out in the room
 then the cameras could see it (using the colored dots) and cause the paper's code to run. The one-to-one mapping
 between what people can see and what programs were running helps the system be understandable. Projectors would project
-the output of the programs on the paper as nonintrusive display. The text editor used to edit papers was itself another
-paper you would point that the program you want to edit.
+the output of the programs on the paper as nonintrusive display. The "text editor" used to edit papers was itself another
+paper that edited the code of the paper it was pointing at.
 </p>
 <p>
 Programs interact by:
@@ -79,8 +77,8 @@ global "tuplespace". This idea is similar to the <a href="https://en.wikipedia.o
 I inherited this metaphor from the <a href="https://livingroomresearch.tumblr.com/post/171022587132/living-room-in-context">Living Room</a>
 project.
 </li>
-<li>Subscribing to facts in the world said by other programs using fill-in-the-blank sentences like "When the temperature
-is X", run some code using the variable X. This way of matching data is close to
+<li>Subscribing to facts in the world stated by other programs using fill-in-the-blank sentences like "When the temperature
+is X" then run some code using the variable X. This way of matching data is similar to
 <a href="https://en.wikipedia.org/wiki/Datalog">Datalog</a>.
 </li>
 </ul>
@@ -109,14 +107,13 @@ After playing around for a few days, I discovered that the room did give promisi
 have a programmable room.
 <ul class="dashed">
 <li>The always-on text editor, live reloading programs, and a easy and extensible language for communicating between
-things in the room felt like the right format to orchestrate the multiple things running in the room. It was very
-satisfying to see something in the room respond within a couple seconds just as easily as I had done only on a screen
-in the past.
+things in the room felt like the right format to orchestrate everything happening in the room. It was satisfying to
+see something in the room respond within a couple seconds just as easily as I had done only on a screen in the past.
 </li>
 <li>The room was successfully a stable and complete editing
 experience away from a GUI OS. It was refreshing to remove all distracting apps.
 </li>
-<li>I am happy that the 9 editable programs are very similar and live in the same extensible system as the programs used
+<li>I am happy that the 9 editable programs are very similar to and live in the same extensible system as the programs used
 to bootstrap the system. Although the boot papers weren't editable in this version, they exist, and in the future there
 can be a gentle transition between making fun programs and editing the system itself. I think this is the key idea to
 making the space work best for the specific place and people that work inside it.
@@ -134,15 +131,14 @@ is no clear separation between the systems language (how things in the room talk
 </li>
 <li>Having the papers fixed to one wall made the papers loose their essential quality &mdash;
 a cheap and common material that could show the code, be written on, and most importantly be moved around the room.
-Having a grid of 9 papers next to a text editor on a single wall still made it feel like it was a more traditional
-editing experience (a text editor side-by-side with the program being edited).
-The "programs" in a room need to be easily moved and rearranged.
+Having a fixed output (the 9 papers) next to a text editor reminded me too much of the side-by-side text editing
+experience done on a flat computer screen. The "programs" in a room need to be easily moved and rearranged.
 </li>
 <li>Errors in the code weren't displayed. I got by because I was familiar with the system, the language, the code, and
 because the programs were short. I would often get the wording of facts or subscriptions wrong. ("Wish light strand was
-blue" vs "Wish lights are blue")
+blue" vs "Wish lights are blue") This is what happens when the interface is not "<a href="http://melconway.com/Home/pdf/humanedozen.pdf">self-revealing</a>" as Mel Conway puts it.
 </li>
-<li>The room was set up with Information displays on the walls and people sitting in the middle looking at the wall. This
+<li>The room was set up with information displayed on the walls and people sitting in the middle looking at the wall. This
 is the "command center" setup. To make the system more social and collaborative it should be the opposite: information
 in the middle with people crowded around it in small groups.
 </li>
