@@ -1,5 +1,4 @@
 body {
-    /* font-family: 'Lora', serif; */
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.3rem;
     line-height: 2.1rem;
@@ -65,14 +64,17 @@ ul.dashed {
 }
 
 ul.dashed>li {
-    margin-left: 20px;
+    margin-left: 24px;
 }
 
 /* Prevent nested li's from getting messed up */
 ul.dashed>li::before {
     content: '\2013\2002';
     color: #a9a9a9;
-    /* color: #42d686; */
+    margin-left: -24px;
+}
+
+.homepage ul.dashed>li::before {
     margin-left: -26px;
 }
 
@@ -104,6 +106,7 @@ sup {
 img {
     max-width: 100%;
 }
+
 hr {
     display: block;
     height: 1px;
@@ -111,6 +114,10 @@ hr {
     border-top: 1px solid #a9a9a9;
     margin: 1em 0;
     padding: 0; 
+}
+
+small {
+    color: #777;
 }
 
 .gallery-image {
