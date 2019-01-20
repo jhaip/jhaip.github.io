@@ -194,4 +194,8 @@ small {
         font-size: 3rem;
         line-height: 3.9rem;
     }
+
+    .homepage ul.dashed>li::before {
+        margin-left: -23px;
+    }
 }
