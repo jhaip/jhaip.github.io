@@ -14,14 +14,14 @@
             background: #fff9cc;
             padding: 5px;
         }
+        .system-code {
+            color: purple;
+        }
     </style>
 </head>
 
 <body class="writing">
     <a href="/"><< Home</a>
-    <p>
-        <img src="./setup.jpg" alt="setup" class="gallery-imagee" />
-    </p>
         <h1>Programmable Space<br>Research Update 2</h1>
         <p><small>March 17, 2019</small></p>
 
@@ -86,7 +86,7 @@
             </small>
         </p>
         
-        <h3>Editing programs</h3>
+        <h4>Editing programs</h4>
         <p>
             One of the programs was the text editor. When hung on the wall sensor, the text editor would run and wish its graphics
             would be projected on wall. The program to edit would be chosen by placing it on the program stand. A wireless keyboard
@@ -102,14 +102,14 @@
         <p>
             The keyboard, projector, text editor, program sensors, and all other programs communicated by updating and subscribing
             to "facts" in global list of facts. Each fact is related to the program that claimed the fact so when a program dies so
-            does it's facts. For example, one program could "wish I was colored blue" and then a separate program could listen for
+            does it's facts. For example, one program could <span class="fact">wish I was colored blue</span> and then a separate program could listen for
             wishes like that and project the graphics to make that program blue. The limit of 1 printed page of source code is also
             a nice limit on the complexity of one program.
         </p>
 
         <p>
             Most of the improvement compared to the last system was made physically, not in code. The same system was used as in my
-            previous fixed 3x3 program demo but with a new program to say "when an RFID sensor sees a program, wish it was running".
+            previous fixed 3x3 program demo but with a new program to say <span class="fact">when an RFID sensor sees a program: wish it was running</span>.
         </p>
         <p>
             The RFID clipboards worked well to allow programs to be moved and read by humans, while also being easily detected by
@@ -138,7 +138,7 @@
             projectors, and wiring still don't feel part of the living room. There is a lot of room to make them less ugly and more
             like real pieces of furniture.
         </p>
-        <br>
+        <h3>Code Changes</h3>
         <p>
             In addition to the physical changes in the space, some code changes made the experience better. I added a compilation
             step when saving updated code with the goal of making the system code more readable. Hiding the low-level code used to
@@ -148,7 +148,7 @@
         <p>
             <div class="col-2">
                 <div class="col">
-                    <code>when time is $time:
+                    <code><span class="system-code">when time is $time:</span>
   if (Math.floor(time/1000) % 2 === 0) {
     claim I wish I was highlighted orange
   }</code>
@@ -212,19 +212,16 @@ run();</code>
             the Photon, it would parse, compile, and flash the code to the Particle Photon. The RFID sensors detecting programs in
             the room were all connected to Particle Photons programmed in this way.
         </p>
-        <p>
-            <img
-                src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cd9e2911-4de1-445c-8931-4765e40b0f97/untitled?AWSAccessKeyId=ASIAT73L2G45O4TXJVAD&Expires=1552933448&Signature=k5f0RsTRuAv6jqpx8YHgAUZ243w%3D&response-content-disposition=filename%20%3D%22untitled%22&x-amz-security-token=FQoGZXIvYXdzEIL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDOTLaO6JiETP6Zj2bCK3AzcBBokLgq9%2B%2F%2BCNzPS2%2BzirbbbZd3b1HTIhOoF28OXywj%2BPLVdLZsXqx1gkbDxwGjDAiJ%2F7e1%2BoEYPg5UH70vBNIonYJ%2FfvXnzyT8sTVn7yT2LIJ8A1j6CPpy0FYZYMkVUl%2FxgleMZH%2B8T7LZAGEPlSs732dKfaYA0FhwK%2BA%2FHRCIaRvYLdyTsFQ7yV2E8nWVXnwVZ512TIVV6L7001ShHc18l%2BkMTvBjsT3M24N6%2FyVSWj5p%2FQj1SblZ9tF2zWEmSCggk2g%2BXp%2Byin24%2BN%2B1PiRKdrEMJA2Io3IEhvwczdYgg62mAMBylidDT4aE5iz4UW%2BBfX8R%2BGBdIq3wTuj4%2FDB5DDVPXR0dldcabLGW45iWDbbITr9uf71POwakMPEWQ5g9Ou%2Fcly2LaOSU9r6nyy6p1zh7i%2BhnoBZyILUxkBbetSD3wlCXVXbn%2Fk%2FTyBuxjYuGjUnylBgdjavIH%2F%2FxmL4re4orSAKQDFKOk3y1a4nfywmmFdMxWGZOl2VKNys%2BdVpfrVVlAGxrUhq1Pgv8pqNeWFro5oiWgiO0%2BKSE9Z2mMiUSmfxANvvD7nUFPNRciGGNrajrooi%2FS55AU%3D" />
-            <small>
-                TODO: Video of Photon being flashed (program_humidity_sensor.MOV)
-            </small>
-        </p>
+
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/7MkvT4ZfDpE?version=3&loop=1&autoplay=1' frameborder='0'
+                allowfullscreen></iframe></div>
+
         <p>
             I have been programming microcontrollers for years and it was an eye opening experience to physically put some code on a
             stand and have the code running on a microcontroller within seconds.
         </p>
 
-        <h3>Example: Playing with humidity sensor data</h3>
+        <h4>Example: Playing with humidity sensor data</h4>
         <p>
             <img
                 src="full_table_with_humidity_code_stand.jpg" />
@@ -235,11 +232,11 @@ run();</code>
         <p>
             A Particle Photon board was wired to a temperature and humidity sensor. Using some Arduino code as reference, I used the
             text editor on the wall to write the code to run on the Photon. The program was placed on the program stand to put the
-            code on the Photon. Once every two seconds, the Photon would read sensor values and make a claim like "Photon203 says
-            the humidity is 29 and temp is 22.89".
+            code on the Photon. Once every two seconds, the Photon would read sensor values and make a claim like <span class="fact">Photon203 says
+            the humidity is 29 and temp is 22.89</span>.
         </p>
         <p>
-            <code>when $ says the humidity is $H and temp is $T:
+            <code><span class="system-code">when $ says the humidity is $H and temp is $T:</span>
   let ill = room.newIllumination()
   ill.text(25, 50, "humidity " + H)
   ill.text(25, 100, "temp " + T)
@@ -249,11 +246,11 @@ run();</code>
             </small>
         </p>
         <p>
-            <code>when $ says the humidity is $H and temp is $T:
+            <code><span class="system-code">when $ says the humidity is $H and temp is $T:</span>
   if (H > 50) {
-    claim I wish I was highlighted red
+    <span class="system-code">claim I wish I was highlighted red</span>
   } else {
-    claim I wish I was highlighted green
+    <span class="system-code">claim I wish I was highlighted green</span>
   }</code>
             <small>
                 Another program on the table listened for facts about temperature and humidity and wished it was highlighting green or
@@ -268,7 +265,7 @@ const W = 12
 const H = 10
 const C = 4
 
-when $ says the humidity is $H and temp is $T:
+<span class="system-code">when $ says the humidity is $H and temp is $T:</span>
   data.push(H);
   data = data.slice(-max_data);
   let ill = room.newIllumination()
@@ -288,7 +285,7 @@ when $ says the humidity is $H and temp is $T:
     ill.ellipse(OX + i*W, H+data[i]*C, 3, 3)
   }
   room.draw(ill)
-otherwise:
+<span class="system-code">otherwise:</span>
   let ill = room.newIllumination()
   ill.text(25, 25, "No data yet")
   room.draw(ill)</code>
@@ -296,13 +293,8 @@ otherwise:
                 A third program kept track of the last 10 humidity values, showed them as text, and make a basic line graph.
             </small>
         </p>
-        <p>
-            <img
-                src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cd9e2911-4de1-445c-8931-4765e40b0f97/untitled?AWSAccessKeyId=ASIAT73L2G45O4TXJVAD&Expires=1552933448&Signature=k5f0RsTRuAv6jqpx8YHgAUZ243w%3D&response-content-disposition=filename%20%3D%22untitled%22&x-amz-security-token=FQoGZXIvYXdzEIL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDOTLaO6JiETP6Zj2bCK3AzcBBokLgq9%2B%2F%2BCNzPS2%2BzirbbbZd3b1HTIhOoF28OXywj%2BPLVdLZsXqx1gkbDxwGjDAiJ%2F7e1%2BoEYPg5UH70vBNIonYJ%2FfvXnzyT8sTVn7yT2LIJ8A1j6CPpy0FYZYMkVUl%2FxgleMZH%2B8T7LZAGEPlSs732dKfaYA0FhwK%2BA%2FHRCIaRvYLdyTsFQ7yV2E8nWVXnwVZ512TIVV6L7001ShHc18l%2BkMTvBjsT3M24N6%2FyVSWj5p%2FQj1SblZ9tF2zWEmSCggk2g%2BXp%2Byin24%2BN%2B1PiRKdrEMJA2Io3IEhvwczdYgg62mAMBylidDT4aE5iz4UW%2BBfX8R%2BGBdIq3wTuj4%2FDB5DDVPXR0dldcabLGW45iWDbbITr9uf71POwakMPEWQ5g9Ou%2Fcly2LaOSU9r6nyy6p1zh7i%2BhnoBZyILUxkBbetSD3wlCXVXbn%2Fk%2FTyBuxjYuGjUnylBgdjavIH%2F%2FxmL4re4orSAKQDFKOk3y1a4nfywmmFdMxWGZOl2VKNys%2BdVpfrVVlAGxrUhq1Pgv8pqNeWFro5oiWgiO0%2BKSE9Z2mMiUSmfxANvvD7nUFPNRciGGNrajrooi%2FS55AU%3D" />
-            <small>
-                TODO: Add end of program_humidity_sensor.MOV
-            </small>
-        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/g-9vHKJbrgc?version=3&autoplay=1&loop=1' frameborder='0'
+                allowfullscreen></iframe></div>
         <p>
             While this was a small demo, I was pleased with it. All the code was written on the clipboards on the table so anyone
             could pick it up and see how it worked. You didn't have to care about the complexity of the low-level Photon code, but
@@ -311,7 +303,7 @@ otherwise:
             graph types. In this space it was easy to make quick, informal displays of data. The programs on the table could have
             been physically moved to the wall to make a bigger display of the data for presentation. This reminds me of Bret
             Victor's description of a "Seeing space" where a space is not only designed for making but also seeing what is going on.
-            I have explored that idea in the past (link) but struggled to find a nice way to make informal and customizable displays
+            I have explored that idea <a href="https://www.youtube.com/watch?v=LqK2nMTE90g">in the past</a> but struggled to find a nice way to make informal and customizable displays
             of data. This limited demo already feels better and isn't limited to what could fit on one or two computer screens.
         </p>
         <p>
@@ -332,6 +324,7 @@ otherwise:
                 <li>Maybe playing with cameras to track programs again</li>
             </ul>
         </p>
+        <br>
         <p>
             I'll be looking for ways to address these limitations while keeping the setup as simple as possible.
             If you have thoughts or questions, feel free to email or reach out to me on <a
