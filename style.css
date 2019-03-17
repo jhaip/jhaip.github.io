@@ -83,6 +83,12 @@ h3 {
     line-height: 3.2rem;
     margin-bottom: 0;
 }
+h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2rem;
+    line-height: 2.7rem;
+    margin-bottom: 0;
+}
 
 ul.dashed {
     list-style: none;
