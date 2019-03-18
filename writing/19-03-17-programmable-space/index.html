@@ -25,7 +25,7 @@
         <h1>Programmable Space<br>Research Update 2</h1>
         <p><small>March 17, 2019</small></p>
 
-        <p>I am exploring the idea of "programmable spaces" - where the concept of a computer is expanded outside of a little
+        <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
         rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
         virtual ones on a screen. Bringing computing to scale of a room makes it a communal and social experience.
         </p>
@@ -49,8 +49,8 @@
             </ul>
         </p>
         <p>
-            I made a new space to address these issues. In this new space, programs were represented physically as a clipboard
-            containing a printout of the latest source code. On the back of the clipboard was a RFID card to uniquely identify the
+            I made a new space to address these issues. In this new space, programs were physically represented as a clipboard
+            containing a printout of the latest source code. On the back of the clipboard was an RFID card to uniquely identify the
             program. For this demo, I pre-made 15 editable clipboard programs.
         </p>
 
@@ -67,7 +67,7 @@
 
         <p>
             Programs were detected by RFID sensors in the room. When a program is placed on top of an RFID sensor then the program
-            is run. 4 RFID sensors where added to a coffee table. 1 RFID sensor was added to a wall where a clipboard could be hung
+            is run. Four RFID sensors were added to a coffee table. One RFID sensor was added to a wall where a clipboard could be hung
             by a nail. Two "program stands" (plastic sign holders with an RFID sensor on the back) also ran programs placed on them.
             Two projectors displayed graphics on the coffee table and the wall.
         </p>
@@ -97,13 +97,16 @@
 
         <p>
             <img src="code_stand_with_code_editor.jpg" />
+            <small>
+                On the left: A program sitting in the program stand. The text editor on the wall edits that program's code. 
+            </small>
         </p>
 
         <p>
             The keyboard, projector, text editor, program sensors, and all other programs communicated by updating and subscribing
             to "facts" in a global list of facts. Each fact is related to the program that claimed the fact so when a program dies so
-            does it's facts. For example, one program could <span class="fact">wish I was colored blue</span> and then a separate program could listen for
-            wishes like that and project the graphics to make that program blue. The limit of 1 printed page of source code is also
+            does its facts. For example, one program could claim the fact <span class="fact">wish I was colored blue</span> and then a separate program could listen for
+            facts like that and project the graphics to make that program blue. The limit of one printed page of source code was also
             a nice limit on the complexity of one program.
         </p>
 
@@ -118,7 +121,7 @@
             became a "program" in the system.
         </p>
         <p>
-            I think papers bordered with colorful dots have, for better or for worse, become part of the brand of Dynamicland. As I
+            I think papers bordered with colorful dots have, for better or for worse, become part of the brand of <a href="https://dynamicland.org/">Dynamicland</a>. As I
             have explored programming spaces I have internalized that "it's not about the dots on the paper" and it's about the
             system behind the papers. Yet I can see how it can take time working in the system to forget about the dots and cameras
             and projectors. The use of clipboards in my space was a nice way to not use papers with colorful dots but try and
@@ -176,22 +179,23 @@ run();</code>
             </div>
         </p>
         <p>
-            The compilation step was done by a regular program that listened for claims about updating source code, parsed the code,
-            and then made a new claim about the compiled source code. Additionally, I added syntax highlighting to the text editor
+            The compilation step was done by a program that listened for facts about updating source code, parsed the code,
+            and then claimed a new fact about the compiled source code. Additionally, I added syntax highlighting to the text editor
             program to separate system level code from other code.
         </p>
         <p>
-            While the code on the left in the example above is shorter, it still does not "read like prose". The base programming
+            While the code on the left in the example above is shorter, it still does not read like prose. The base programming
             language is still there for "writing code" and this brings all of the syntax and errors as the base language. In the
             example above the base language is JavaScript but the system is language agnostic and other programs use different base
             languages. For now, I am thinking most about the "system level language" - how programs in the room communicate. In the
-            long term, I think it will be important to have a language that reinforces the concepts of programs in the room working
+            long term, I think it will be important to have a language that reinforces the concept of programs in the room working
             together. Existing programming languages were not designed to live on a piece of paper, talk to other pieces of paper,
             and be casually read and edited by people.
         </p>
         <br>
         <p>
-            I also added a program to compile code for Particle Photon microcontrollers. These microcontrollers do not run a full
+            I also added a program to compile code for <a href="https://store.particle.io/collections/photon">Particle Photon microcontrollers</a>.
+            These microcontrollers do not run a full
             Operating System but can run code and speak to the room via a WiFi connection. Because they are small and cheap, they
             are a nice platform for connecting things to the room such as RFID sensors and humidity sensors. While they are nice,
             the Photon boards are not particularly special and I could have chosen any WiFi connected microcontroller, Raspberry Pi,
@@ -199,12 +203,12 @@ run();</code>
         </p>
         <p>
             I think inputs and outputs to a programmable space besides projectors and cameras are important to get away from the
-            legacy of "rectangular computer objects" and I was excited to explore this area more. I imagine there could be a
+            legacy of "rectangular computer objects" and I am excited to explore this area more. I imagine there could be a
             programmable space completely free of projectors, pixel screens, or cameras if there are sufficiently interesting inputs
             and outputs in the space.
         </p>
         <p>
-            I was inspired by the way Raspberry Pi's can be programmed at Dynamicland - by pointing a program that wishes it ran on
+            I was inspired by the way Raspberry Pi's can be programmed at Dynamicland &mdash; by pointing a program that wishes it ran on
             a Raspberry Pi at the specific Raspberry Pi the code should be run on. More details can be found in
             <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post by Omar Rizwan</a>. In my space, a program that wished
             some code would be running on a Particle Photon would be placed on a "program stand" next to a Particle Photon. Another
@@ -249,7 +253,7 @@ run();</code>
     <span class="system-code">claim I wish I was highlighted green</span>
   }</code>
             <small>
-                Another program on the table listened for facts about temperature and humidity and wished it was highlighting green or
+                Another program on the table listened for facts about temperature and humidity and wished it was highlighted green or
                 red, depending on the humidity value.
             </small>
         </p>
@@ -286,43 +290,42 @@ const C = 4
   ill.text(25, 25, "No data yet")
   room.draw(ill)</code>
             <small>
-                A third program kept track of the last 10 humidity values, showed them as text, and make a basic line graph.
+                A third program kept track of the last 10 humidity values, showed them as text, and made a basic line graph.
             </small>
         </p>
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/g-9vHKJbrgc?version=3&loop=1&playlist=g-9vHKJbrgc' frameborder='0'
                 allowfullscreen></iframe></div>
         <p>
-            While this was a small demo, I was pleased with it. All the code was written on the clipboards on the table so anyone
-            could pick it up and see how it worked. You didn't have to care about the complexity of the low-level Photon code, but
+            While this was a small demo, I was pleased with it. All the code was printed out on the clipboards on the table so anyone
+            could pick them up and see how they worked. You didn't have to care about the complexity of the low-level Photon code, but
             it was there if you were curious. Remixing was encouraged because anyone could pick up the program and edit it using the
-            always-on text edit on the wall. This wasn't a pre-built dashboard you put on a fixed TV where you can only pick certain
-            graph types. In this space it was easy to make quick, informal displays of data. The programs on the table could have
-            been physically moved to the wall to make a bigger display of the data for presentation. This reminds me of Bret
+            always-on text editor on the wall. This wasn't a pre-built dashboard you put on a TV where you can only choose certain
+            graph types. In this space it was easy to make quick and informal displays of data. The programs on the table could be
+            physically moved to the wall to make a bigger display of the data for presentation. This reminds me of Bret
             Victor's description of a "Seeing space" where a room is not only designed for making but also seeing what is going on.
             I have explored that idea <a href="https://www.youtube.com/watch?v=LqK2nMTE90g">in the past</a> but struggled to find a nice way to make informal and customizable displays
-            of data. This limited demo already feels better and isn't limited to what could fit on one or two computer screens.
+            of data. This limited demo already feels better and isn't limited to what can fit on one or two computer screens.
         </p>
         <p>
-            Unfortunately, Photons were not a totally equal member in the room. Claims from a Photon went from the Photon's C code →
+            Unfortunately, the Particle Photon microcontrollers were not a totally equal member in the room. Claims from a Photon went from the Photon's C code →
             HTTP → A program that translates the HTTP request to the system protocol → the rest of the system. I learned that
             decentralization will need to become an important part of the system. Computation needs to be able to scale beyond a
-            single central computer or the "size of the room" will always be limited. Dynamicland's approach to this is touched on
-            in <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post</a> about the Raspberry Pi's,
+            single central computer or the "size of the room" will always be limited. Dynamicland's approach to distributed computing is touched on
+            in <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post</a>,
             but I haven't grasped the concept and I'd like to explore this area in the future.
         </p>
         <p>
             Other areas I'd like to explore:
             <ul class="dashed">
                 <li>Visibility of code errors</li>
-                <li>Ways of making programs without needing to write code from a scratch.</li>
+                <li>Ways make programs without needing to write code from a scratch.</li>
                 <li>Scalability of the system to handle facts with larger data like images or .CSV files</li>
                 <li>Distributing the system to scale to more than one computer</li>
-                <li>Maybe playing with cameras to track programs again</li>
+                <li>Maybe playing with cameras and computer vision to track programs again</li>
             </ul>
         </p>
         <br>
         <p>
-            I'll be looking for ways to address these limitations while keeping the setup as simple as possible.
             If you have thoughts or questions, feel free to email or reach out to me on <a
                 href="https://twitter.com/jhaip">Twitter</a>.
         </p>
