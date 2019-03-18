@@ -17,11 +17,17 @@
         .system-code {
             color: purple;
         }
+        .code-comment {
+            color: darkgreen;
+        }
     </style>
 </head>
 
 <body class="writing">
     <a href="/"><< Home</a>
+    <p>
+        <img src="full_table_with_humidity_code_stand.jpg" alt="setup" class="gallery-imagee" />
+    </p>
         <h1>Programmable Space<br>Research Update 2</h1>
         <p><small>March 17, 2019</small></p>
 
@@ -269,16 +275,16 @@ const C = 4
   data.push(H);
   data = data.slice(-max_data);
   let ill = room.newIllumination()
-  // Draw the data as a list of text
+  <span class="code-comment">// Draw the data as a list of text</span>
   ill.fontsize(12)
   ill.text(25, 25, data.join("\n"))
-  // Draw axes of the line graph
+  <span class="code-comment">// Draw axes of the line graph</span>
   ill.line(OX, H, OX + max_data*W, H)
   ill.line(OX, H, OX, H + 100*C)
   ill.stroke("yellow")
-  // Draw the lines of the line graph
+  <span class="code-comment">// Draw the lines of the line graph</span>
   for (let i = 0; i < data.length; i +=1) {
-    if (i> 0) {
+    if (i > 0) {
       ill.line(OX + (i-1)*W, H+data[i-1]*C,
                OX + i*W, H+data[i] *C)
     }
