@@ -34,7 +34,7 @@
             Previously, I made a programmable space with a <a href="https://haiperspace.com/writing/19-01-20-research-update/">fixed 3x3 grid of papers</a>
             on a wall next to an always-on text editor. It was a good demonstration but had some issues:
             <ul class="dashed">
-                <li>Having the papers fixed to one wall made them loose their essential quality — a cheap and common material that could
+                <li>Having the papers fixed to one wall made them lose their essential quality — a cheap and common material that could
                 show code, be written on, and most importantly be moved around the room.
                 </li>
                 <li>Sitting in the middle of the room and looking at one wall of programs was not the right layout for a social and
@@ -89,7 +89,7 @@
         <h4>Editing programs</h4>
         <p>
             One of the programs was the text editor. When hung on the wall sensor, the text editor would run and wish its graphics
-            would be projected on wall. The program to edit would be chosen by placing it on the program stand. A wireless keyboard
+            would be projected on the wall. The program to edit would be chosen by placing it on the program stand. A wireless keyboard
             was used to edit the text in the text editor. Keyboard shortcuts saved the updated code and printed it out on paper.
             Prints of updated code were put in the clipboard on top of the previous versions of code (physical version control). To
             run the updated program, it would be moved from the stand to the table.
@@ -101,7 +101,7 @@
 
         <p>
             The keyboard, projector, text editor, program sensors, and all other programs communicated by updating and subscribing
-            to "facts" in global list of facts. Each fact is related to the program that claimed the fact so when a program dies so
+            to "facts" in a global list of facts. Each fact is related to the program that claimed the fact so when a program dies so
             does it's facts. For example, one program could <span class="fact">wish I was colored blue</span> and then a separate program could listen for
             wishes like that and project the graphics to make that program blue. The limit of 1 printed page of source code is also
             a nice limit on the complexity of one program.
@@ -113,8 +113,8 @@
         </p>
         <p>
             The RFID clipboards worked well to allow programs to be moved and read by humans, while also being easily detected by
-            the system. The clipboard as a physical object was common enough that it wasn't jarring to see in a living room, but
-            special enough that it wasn't just a piece of paper. A piece of paper with code on it clipped into a special clipboard
+            the system. The clipboard as a physical object was common enough that it wasn't jarring to see in a living room but
+            special enough that it wasn't just a piece of paper. A printed piece of code clipped into a special clipboard
             became a "program" in the system.
         </p>
         <p>
@@ -134,7 +134,7 @@
         <p>
             Embedding the sensors in a normal living room was a glimpse at what it might be like to have a programmable space in the
             home. On one hand, it was nice to not need to "leave the living room", either physically or with my attention, when
-            using the system. This is important for having a social and communal space. On the other hand the RFID sensors,
+            using the system. This is important for having a social and communal space. On the other hand, the RFID sensors,
             projectors, and wiring still don't feel part of the living room. There is a lot of room to make them less ugly and more
             like real pieces of furniture.
         </p>
@@ -142,8 +142,8 @@
         <p>
             In addition to the physical changes in the space, some code changes made the experience better. I added a compilation
             step when saving updated code with the goal of making the system code more readable. Hiding the low-level code used to
-            run the system and to make subscriptions made many programs shorter. Shorter programs where easier to understand and
-            required less typing. Less typing meant less typos and reduced the frequency of errors somewhat.
+            run the system and to make subscriptions made many programs shorter. Shorter programs were easier to understand and
+            required less typing. Less typing meant fewer typos and reduced the frequency of errors somewhat.
         </p>
         <p>
             <div class="col-2">
@@ -177,30 +177,30 @@ run();</code>
         </p>
         <p>
             The compilation step was done by a regular program that listened for claims about updating source code, parsed the code,
-            and then made a new claim about the compiled source code. Additionally I added syntax highlighting to the text editor
+            and then made a new claim about the compiled source code. Additionally, I added syntax highlighting to the text editor
             program to separate system level code from other code.
         </p>
         <p>
             While the code on the left in the example above is shorter, it still does not "read like prose". The base programming
             language is still there for "writing code" and this brings all of the syntax and errors as the base language. In the
             example above the base language is JavaScript but the system is language agnostic and other programs use different base
-            languages. For now I am thinking most about the "system level language" - how programs in the room communicate. In the
-            long term I think it will be important to have a language that reinforce the concepts of programs in the room working
+            languages. For now, I am thinking most about the "system level language" - how programs in the room communicate. In the
+            long term, I think it will be important to have a language that reinforces the concepts of programs in the room working
             together. Existing programming languages were not designed to live on a piece of paper, talk to other pieces of paper,
             and be casually read and edited by people.
         </p>
         <br>
         <p>
             I also added a program to compile code for Particle Photon microcontrollers. These microcontrollers do not run a full
-            Operating System, but can run code and speak to the room via a WiFi connection. Because they are small and cheap, they
+            Operating System but can run code and speak to the room via a WiFi connection. Because they are small and cheap, they
             are a nice platform for connecting things to the room such as RFID sensors and humidity sensors. While they are nice,
             the Photon boards are not particularly special and I could have chosen any WiFi connected microcontroller, Raspberry Pi,
-            or other computer.
+            or another computer.
         </p>
         <p>
             I think inputs and outputs to a programmable space besides projectors and cameras are important to get away from the
-            legacy of "rectangular computer objects" and I was excited to explore this area more. I image there could be a
-            programmable space completely free of projectors, pixel screens, or cameras if there is sufficiently interesting inputs
+            legacy of "rectangular computer objects" and I was excited to explore this area more. I imagine there could be a
+            programmable space completely free of projectors, pixel screens, or cameras if there are sufficiently interesting inputs
             and outputs in the space.
         </p>
         <p>
@@ -208,7 +208,7 @@ run();</code>
             a Raspberry Pi at the specific Raspberry Pi the code should be run on. More details can be found in
             <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post by Omar Rizwan</a>. In my space, a program that wished
             some code would be running on a Particle Photon would be placed on a "program stand" next to a Particle Photon. Another
-            program in the room listened for what programs where running on the stand and if that program wished code would run on
+            program in the room listened for what programs were running on the stand and if that program wished code would run on
             the Photon, it would parse, compile, and flash the code to the Particle Photon. The RFID sensors detecting programs in
             the room were all connected to Particle Photons programmed in this way.
         </p>
@@ -226,8 +226,8 @@ run();</code>
             <img src="full_table_with_humidity_code_stand.jpg" />
         </p>
         <p>
-            A Particle Photon board was wired to a temperature and humidity sensor. Using some Arduino code as reference, I used the
-            text editor on the wall to write the code to run on the Photon. The program was placed on the program stand to put the
+            A Particle Photon board was wired to a temperature and humidity sensor. Using some Arduino code as a reference, I made
+            the code to run on the Photon with the text editor on the wall. The program was placed on the program stand to put the
             code on the Photon. Once every two seconds, the Photon would read sensor values and make a claim like <span class="fact">Photon203 says
             the humidity is 29 and temp is 22.89</span>.
         </p>
@@ -298,7 +298,7 @@ const C = 4
             always-on text edit on the wall. This wasn't a pre-built dashboard you put on a fixed TV where you can only pick certain
             graph types. In this space it was easy to make quick, informal displays of data. The programs on the table could have
             been physically moved to the wall to make a bigger display of the data for presentation. This reminds me of Bret
-            Victor's description of a "Seeing space" where a space is not only designed for making but also seeing what is going on.
+            Victor's description of a "Seeing space" where a room is not only designed for making but also seeing what is going on.
             I have explored that idea <a href="https://www.youtube.com/watch?v=LqK2nMTE90g">in the past</a> but struggled to find a nice way to make informal and customizable displays
             of data. This limited demo already feels better and isn't limited to what could fit on one or two computer screens.
         </p>
