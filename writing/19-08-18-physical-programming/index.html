@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+        .system-code {
+            color: purple;
+        }
+        .code-comment {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+    <p>
+        <img src="full_table_with_humidity_code_stand.jpg" alt="setup" class="gallery-imagee" />
+    </p>
+        <h1>Physical Programming<br>Research Update 3</h1>
+        <p><small>August 18, 2019</small></p>
+
+        <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
+        rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
+        virtual ones on a screen. Bringing computing to scale of a room makes it a communal and social experience.
+        </p>
+
+        <p>
+            Previously, I experimented with programmable spaces with
+            <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">clipboards representing code</a> and 
+            with <a href="https://haiperspace.com/writing/19-01-20-research-update/">fixed 3x3 grid of papers</a>
+            on a wall.
+        </p>
+        <p>
+            But the demos have been focused on the textual aspects of code. Peices of paper with code on them were mapped to code running on a computer.
+            It was nice to interact with physical objects instead of using a single computer monitor,
+            but the real "work" still involved typing code in a little rectangle.
+            The peices of paper could be moved around the physical world, but in my experiments so far programs were not aware
+            of their physical location, the location of other programs, and overall didn't use their physical afforadances to change their behavior.
+            A peice of code could be moved from a table to the wall, but it would have the behave the same either way.
+        </p>
+
+        <p>
+            <div class="col-2">
+                <div class="col">
+                    <img src="many-programs-on-wall.jpg" />
+                </div>
+                <div class="col">
+                    <img src="desktop-with-many-windows.jpg" />
+                    <small>via https://www.flickr.com/photos/redspotted/7705129</small>
+                </div>
+            </div>
+            <small>
+                Unless there are other affordances, the view on the left is too similar to the overcrowded desktop on the right.
+            </small>
+        </p>
+
+        <p>
+            Therefore I wanted to play with non-textual ways of coding. Take this as a time to gauge how well the system is at
+            allowing people to prototype their ideas. Hoping that it would encourage them to world in a non-textual way.
+        </p>
+        
+        <h3>Spatial Awareness</h3>
+        <p>
+            One of the programs was the text editor. When hung on the wall sensor, the text editor would run and wish its graphics
+            would be projected on the wall. The program to edit would be chosen by placing it on the program stand. A wireless keyboard
+            was used to edit the text in the text editor. Keyboard shortcuts saved the updated code and printed it out on paper.
+            Prints of updated code were put in the clipboard on top of the previous versions of code (physical version control). To
+            run the updated program, it would be moved from the stand to the table.
+        </p>
+
+        <p>
+            <img src="code_stand_with_code_editor.jpg" />
+            <small>
+                On the left: A program sitting in the program stand. The text editor on the wall edits that program's code. 
+            </small>
+        </p>
+
+        <h3>Words Free Robot Programming</h3>
+        <p>
+            But the rearranging of code spatially is still based on the concept of code - it still looks like code.
+            Therefore I tried out a system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
+        </p>
+        <p>
+            <img src="matatalab-set.jpg" />
+            <small>
+                Colored tiles with symbols on them (left) are placed on a board (middle) to program the robot (right).
+            </small>
+        </p>
+        <p>
+            I can't speak for how affective the Matatalab product is at teaching kids basic coding concepts, but I think their product
+            will well designed and I admire them for making a physical and screen-free way to learn.
+        </p>
+        <p>
+            While the code on the left in the example above is shorter, it still does not read like prose. The base programming
+            language is still there for "writing code" and this brings all of the syntax and errors as the base language. In the
+            example above the base language is JavaScript but the system is language agnostic and other programs use different base
+            languages. For now, I am thinking most about the "system level language" - how programs in the room communicate. In the
+            long term, I think it will be important to have a language that reinforces the concept of programs in the room working
+            together. Existing programming languages were not designed to live on a piece of paper, talk to other pieces of paper,
+            and be casually read and edited by people.
+        </p>
+
+        <h3>Laser Regions</h3>
+        <p>
+            <img src="full_table_with_humidity_code_stand.jpg" />
+        </p>
+        <p>
+            A Particle Photon board was wired to a temperature and humidity sensor. Using some Arduino code as a reference, I made
+            the code to run on the Photon with the text editor on the wall. The program was placed on the program stand to put the
+            code on the Photon. Once every two seconds, the Photon would read sensor values and make a claim like <span class="fact">Photon203 says
+            the humidity is 29 and temp is 22.89</span>.
+        </p>
+        <p>
+            Unfortunately, the Particle Photon microcontrollers were not a totally equal member in the room. Claims from a Photon went from the Photon's C code →
+            HTTP → A program that translates the HTTP request to the system protocol → the rest of the system. I learned that
+            decentralization will need to become an important part of the system. Computation needs to be able to scale beyond a
+            single central computer or the "size of the room" will always be limited. Dynamicland's approach to distributed computing is touched on
+            in <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post</a>,
+            but I haven't grasped the concept and I'd like to explore this area in the future.
+        </p>
+        <p>
+            Other areas I'd like to explore:
+            <ul class="dashed">
+                <li>Visibility of code errors</li>
+                <li>Ways make programs without needing to write code from a scratch.</li>
+                <li>Scalability of the system to handle facts with larger data like images or .CSV files</li>
+                <li>Distributing the system to scale to more than one computer</li>
+                <li>Maybe playing with cameras and computer vision to track programs again</li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            If you have thoughts or questions, feel free to email or reach out to me on <a
+                href="https://twitter.com/jhaip">Twitter</a>.
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+    </body>
+</html>
