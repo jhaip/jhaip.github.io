@@ -67,27 +67,63 @@
         </p>
 
         <p>
-            Therefore I wanted to play with non-textual ways of coding. Take this as a time to gauge how well the system is at
-            allowing people to prototype their ideas. Hoping that it would encourage them to world in a non-textual way.
+            Therefore I wanted to play with non-textual ways of coding.
+            I also wanted to use this idea to gauge how well the system is at supporting physical affordances and to be
+            a platform to prototype new ideas in this area.
         </p>
         
         <h3>Spatial Awareness</h3>
         <p>
-            One of the programs was the text editor. When hung on the wall sensor, the text editor would run and wish its graphics
-            would be projected on the wall. The program to edit would be chosen by placing it on the program stand. A wireless keyboard
-            was used to edit the text in the text editor. Keyboard shortcuts saved the updated code and printed it out on paper.
-            Prints of updated code were put in the clipboard on top of the previous versions of code (physical version control). To
-            run the updated program, it would be moved from the stand to the table.
+            In a programmable space, programs are in the physical world so they should have properties like other physical things:
         </p>
-
+        <ul class="dashed">
+            <li>You can hold them in your hands. You can move them around.</li>
+            <li>Objects can have physical affordances to suggest that they be used a certain way. Switches can be actual switches.
+                Paper is a nice physical representation of a program because it can be drawn on, pinned up on walls, or recycled when it isn't needed.</li>
+            <li>
+                Programs can "see" what other programs are around them and change their behavior.
+                If several programs are arranged arranged in a row this could imply a relation or "flow" of data or influence.
+                A region in space like a particular table can be used to imply a grouping that means something to the programs on that table vs programs on a different table. 
+            </li>
+        </ul>
+        <br>
+        <img src="lines-to-other-papers.jpg">
         <p>
-            <img src="code_stand_with_code_editor.jpg" />
-            <small>
-                On the left: A program sitting in the program stand. The text editor on the wall edits that program's code. 
-            </small>
+            In the photo shown above, programs are represented by papers with colored dots on the corners. (The colored dots help a camera recognize the papers)
+            The locations of all programs are claimed to the room so any program can use them. In this case one paper draws a line from itself to all the other papers on the same wall.
+        </p>
+        <div class='embed-container'><iframe
+                src='https://www.youtube-nocookie.com/embed/srNoF4zLaDU?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            This first demo shows two "data sources": one that is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
+            Both of these data sources show their value and also claim their current value to the room.
+            Another program is a gauge graph that displays the whatever number is claimed by a program that is above it.
+            You can hold the guage graph in your hand and point it at whatever data source you'd like to be shown on the graph.
+            The spatial relation helps connect the idea that the graph is separete from the data, reusable, and depends on what is is pointing at and nothing else.
+        </p>
+        <p>INSERT DEMO VIDEO 2</p>
+        <p>
+            This next demo adds a few new programs:
+            A "data store" - a program that saves the last 20 values from whatever data source is above it.
+            A program that calculates and shows the average of the values in a "data store"
+            A bar graph that plots values from whatever "data store" is to its left.
+            A produces a new data store after applying a filter to the data store above it.
+        </p>
+        <p>
+            All these programs can be used independently and swapped out. When they are all used the flow of data matches the arrangement of the papers.
+            This is similar to node/graph based visual programming environments like MaxMSP where you can modify a program by rearranging "nodes",
+            but the nodes themselves are chunks of code that you may or may not care about.
+        </p>
+        <p>
+            One property that I'm especially interested in is a programmable space's ability to recreate itself.
+            You can understand a system by just removing one piece and seeing what happens.
+            Restoring the system is a simple as putting a piece of paper on a table.
+            Because this is normal, there is no harm in someone new to the space to break things.
+            Breaking things encourages you to get a sense of what is important without reading the logic connected to each program.
         </p>
 
-        <h3>Words Free Robot Programming</h3>
+        <h3>Words-Free Robot Programming</h3>
         <p>
             But the rearranging of code spatially is still based on the concept of code - it still looks like code.
             Therefore I tried out a system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
@@ -103,25 +139,28 @@
             will well designed and I admire them for making a physical and screen-free way to learn.
         </p>
         <p>
-            While the code on the left in the example above is shorter, it still does not read like prose. The base programming
-            language is still there for "writing code" and this brings all of the syntax and errors as the base language. In the
-            example above the base language is JavaScript but the system is language agnostic and other programs use different base
-            languages. For now, I am thinking most about the "system level language" - how programs in the room communicate. In the
-            long term, I think it will be important to have a language that reinforces the concept of programs in the room working
-            together. Existing programming languages were not designed to live on a piece of paper, talk to other pieces of paper,
-            and be casually read and edited by people.
+            To recreate this idea, I made a robot from robot chassis for a raspberry pi.
+            The raspberry pi ran the same broker as all the other computers running the programmable space.
+            Programs in the room can wish code runs on the raspberry pi. (Messages are federated between computers)
+            In this case we have the tiles converted into code and then we run the code on the robot.
+            Tiles are seen using a webcam connected to another computer running the system broker and a computer vision program.
+            The tiles seen are claimed and available to any program in the room.
+            One program is visualizes what the camera "sees".
+            Another program converts the seen tiles into some Python code that can move the robot.
+            A program shows this compiled code as well.
+            When a button is pressed (a claim is made to the space that a button has been pressed),
+            another programs wishes the robot code would be running on the robot.
+            The flow from button press to robot movement takes around 4 seconds for the data to be proxied
+            and because of some inefficient code I wrote, but it's good enough for a demo.
+        </p>
+
+        <p>
+            But even without having text, it's still has the feel of coding: syntax errors, etc. Objects themselves were also
+            "technical".
         </p>
 
         <h3>Laser Regions</h3>
-        <p>
-            <img src="full_table_with_humidity_code_stand.jpg" />
-        </p>
-        <p>
-            A Particle Photon board was wired to a temperature and humidity sensor. Using some Arduino code as a reference, I made
-            the code to run on the Photon with the text editor on the wall. The program was placed on the program stand to put the
-            code on the Photon. Once every two seconds, the Photon would read sensor values and make a claim like <span class="fact">Photon203 says
-            the humidity is 29 and temp is 22.89</span>.
-        </p>
+        
         <p>
             Unfortunately, the Particle Photon microcontrollers were not a totally equal member in the room. Claims from a Photon went from the Photon's C code →
             HTTP → A program that translates the HTTP request to the system protocol → the rest of the system. I learned that
