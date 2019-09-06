@@ -96,47 +96,58 @@
                 src='https://www.youtube-nocookie.com/embed/srNoF4zLaDU?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
         <p>
-            This first demo shows two "data sources": one that is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
-            Both of these data sources show their value and also claim their current value to the room.
-            Another program is a gauge graph that displays the whatever number is claimed by a program that is above it.
+            This video above shows two "data sources": one that is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
+            Both of these data sources show their value and make their current value available to the room.
+            Another program is a gauge graph that displays whatever number is claimed by the program above it.
             You can hold the guage graph in your hand and point it at whatever data source you'd like to be shown on the graph.
             The spatial relation helps connect the idea that the graph is separete from the data, reusable, and depends on what is is pointing at and nothing else.
         </p>
-        <p>INSERT DEMO VIDEO 2</p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/XUQAKwLFuNI?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
         <p>
-            This next demo adds a few new programs:
-            A "data store" - a program that saves the last 20 values from whatever data source is above it.
-            A program that calculates and shows the average of the values in a "data store"
-            A bar graph that plots values from whatever "data store" is to its left.
-            A produces a new data store after applying a filter to the data store above it.
+            The video above shows how you collect and visualize data over time in a programmable space.
+            A program could be a "data store" that saves the last 20 values from whatever data source is above it.
+            Other programs can look at the "data store" they are pointing at an visualize them or produce a modified set of data.
+            The video above shows a bar graph, filter that only keeps odd values, and a program that shows the average of the data.
         </p>
         <p>
-            All these programs can be used independently and swapped out. When they are all used the flow of data matches the arrangement of the papers.
+            When they are all used the flow of data matches the arrangement of the papers.
             This is similar to node/graph based visual programming environments like MaxMSP where you can modify a program by rearranging "nodes",
             but the nodes themselves are chunks of code that you may or may not care about.
+            It is hard to see in the video, but when a program depends on something that is is pointing at, a blue line
+            is projected from the paper into the space the paper is "looking at". This helps show the connection, or potential connection, between papers.
         </p>
         <p>
-            One property that I'm especially interested in is a programmable space's ability to recreate itself.
-            You can understand a system by just removing one piece and seeing what happens.
-            Restoring the system is a simple as putting a piece of paper on a table.
+            One property that I'm especially interested in is a programmable space ability to support understanding by
+            being able recreate itself and not depend on an order.
+            For example, all of these programs in the demo above are independent and magically update when they point at a program that claims something to the
+            room in a format they can work with.
+            Someone new can begin to understand what is going on by removing a program and seeing what happens.
+            "Undoing" is a simple as putting a piece of paper back were you found it.
             Because this is normal, there is no harm in someone new to the space to break things.
             Breaking things encourages you to get a sense of what is important without reading the logic connected to each program.
         </p>
 
-        <h3>Words-Free Robot Programming</h3>
+        <h3>Text-Free Robot Programming</h3>
         <p>
-            But the rearranging of code spatially is still based on the concept of code - it still looks like code.
-            Therefore I tried out a system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
+            But the rearranging of code spatially is still based on the concept of textual code and it can be intimidating.
+            Therefore I tried out a less intimidating system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
         </p>
         <p>
             <img src="matatalab-set.jpg" />
             <small>
-                Colored tiles with symbols on them (left) are placed on a board (middle) to program the robot (right).
+                Matatalab's Coding Set: Colored tiles with symbols on them (left) are placed on a board (middle) to program the robot (right).
             </small>
         </p>
         <p>
             I can't speak for how affective the Matatalab product is at teaching kids basic coding concepts, but I think their product
             will well designed and I admire them for making a physical and screen-free way to learn.
+        </p>
+        <p>
+            <img src="robot-angle-shot.jpg">
+            <small>
+                My text-free robot programming environment
+            </small>
         </p>
         <p>
             To recreate this idea, I made a robot from robot chassis for a raspberry pi.
