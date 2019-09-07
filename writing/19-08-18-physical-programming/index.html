@@ -199,17 +199,54 @@
             But even without having text, it's still has the feel of coding: syntax errors, etc. Objects themselves were also
             "technical".
         </p>
+        <p>
+            <ul class="dashed">
+                <li>
+                    <strong>Papers:</strong>
+                    Although it was made from regular printed paper - they required special colored dots in the corners for tracking. The
+                    papers could be drawn on and cut in the middle, but the dots in the corners were required. If you had an existing object
+                    → you could either try to put dots around it or you'd have to have the technical knowledge to track it.
+                </li>
+                <li>
+                    <strong>Text-Free Tiles</strong>
+                    Like the dots, it was a special object that could only recognize the prebuilt tiles. Special technical knowledge needed
+                    to detect them and someone new would have to understand the system to extend it.
+                </li>
+            </ul>
+        </p>
 
         <h3>Laser Regions</h3>
         
         <p>
-            Unfortunately, the Particle Photon microcontrollers were not a totally equal member in the room. Claims from a Photon went from the Photon's C code →
-            HTTP → A program that translates the HTTP request to the system protocol → the rest of the system. I learned that
-            decentralization will need to become an important part of the system. Computation needs to be able to scale beyond a
-            single central computer or the "size of the room" will always be limited. Dynamicland's approach to distributed computing is touched on
-            in <a href="https://rsnous.com/posts/notes-from-dynamicland-programming-raspberry-pis/">this post</a>,
-            but I haven't grasped the concept and I'd like to explore this area in the future.
+            Therefore I wanted to try out an interaction model where any object in the room could be connected to the room.
+            Examples: Something you drew or a book.
         </p>
+        <p>
+            I built a system where you could use a laser pointer to define "regions" in space and an event is fired when one is
+            hovered/selected. Laser pointer is like a mouse. Programs in the room can subscribe to what regions are selected or toggled
+            and act that.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/OVLIwkPlILg?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            In this first demo we start with a tiger face made our of construction paper.
+            We define a region roughly around the tiger's face and name the region "tiger".
+            Another program subscribes to facts about a laser being in a region named "tiger" and shows "RAWR!".
+            Because the program is also a piece of paper, we can cut it to make it and the "RAWR" bigger.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/OVLIwkPlILg?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            My partner and I have a map with pins of restaurants we have been to together over the years.
+            The map is cool by itself but in this demo I added some magic to allow you to select a region on the map
+            to see the neighborhood name and the restaurants we went too.
+        </p>
+        <p>
+            I liked how the laser regions allowed the map to be a normal and beautiful object by itself
+            and only if you interact can you see some additional annotations about it.
+        </p>
+
+        <h3>Future Work</h3>
         <p>
             Other areas I'd like to explore:
             <ul class="dashed">
