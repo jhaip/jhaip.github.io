@@ -150,24 +150,51 @@
             </small>
         </p>
         <p>
-            <img src="robot-diagram.png" />
+            To recreate this idea, I built a board, stand, and "action blocks" out of LEGOs.
+            The action blocks had symbols on them to represent actions like "move forward", "turn right", "start a loop", and numbers.
+            A webcam looked down at the blocks on the board and feed data into a program that used computer vision to guess the current state of the board.
+            The state of the board was claimed to the room so other programs could use it.
         </p>
         <p>
-            To recreate this idea, I made a robot from robot chassis for a raspberry pi.
-            The raspberry pi ran the same broker as all the other computers running the programmable space.
-            Programs in the room can wish code runs on the raspberry pi. Claims to the room are syndicate between computers running the room broker.
-            In this case we have the tiles converted into code and then we run the code on the robot.
-            Tiles are seen using a webcam connected to another computer running the system broker and a computer vision program.
-            The tiles seen are claimed and available to any program in the room.
-            One program is visualizes what the camera "sees".
-            Another program converts the seen tiles into some Python code that can move the robot.
-            A program shows this compiled code as well.
-            When a button is pressed (a claim is made to the space that a button has been pressed),
-            another programs wishes the robot code would be running on the robot.
-            The flow from button press to robot movement takes around 4 seconds for the data to be proxied
-            and because of some inefficient code I wrote, but it's good enough for a demo.
+            The robot you programmed was built from a Raspberry Pi and a <a href="https://www.adafruit.com/product/3244">robot chassis</a> using a couple DC Motors.
+            A Particle Photon board hooked up to a button would notify the room whenever it's button was pressed.
+            Finally, other programs running in the room visualized the state of the board, converted the board into code that made the robot perform the movements, showed the robot code,
+            and told the robot to current the code when the button was pressed.
         </p>
-
+        <p>
+            <img src="robot-diagram.png" />
+            <small>
+                Overall architecture of this demo. Messages syndicated between brokers are shown on the top in blue.
+            </small>
+        </p>
+        <p>
+            Each computer in the room was running the exact same "room <a href="https://en.wikipedia.org/wiki/Message_broker">message broker</a>" that allowed programs to make claims
+            to the room and for claims to be syndicated between computers.
+            The only difference between the computers was what programs were running on them and what things were connected to them like cameras, motors, or projectors.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/277migTZoKs?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            I liked this text-free robot demo because it was fun to play with and because it showed some nice properties of the programmable space system:
+        </p>
+        <p>
+            <ul class="dashed">
+                <li>
+                    Claiming things about the room is a nicer abstraction that works well across computers.
+                    It's nice that programs running on the same computer and programming running on different computers all communicate in the same way.
+                    The protocol is defined.
+                </li>
+                <li>
+                    Because programs communicated via a shared fact table, it encourages programs to be broken apart.
+                    For example in the text-free robot demo, the board vision code was separate from the board-to-robot-code compiler and the robot itself.
+                    Because programs communicate globally, it is easy to integrate and prototype related programs.
+                    The board visualization and the compiled code display weren't needed for the demo, but they were the easiest programs to make and were helpful tools to see into the system.
+                </li>
+                <li>
+                    Live updates come for free
+                </li>
+            </ul>
+        </p>
         <p>
             But even without having text, it's still has the feel of coding: syntax errors, etc. Objects themselves were also
             "technical".
