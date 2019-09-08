@@ -84,43 +84,47 @@
         <img src="lines-to-other-papers.jpg">
         <p>
             In the photo shown above, programs are represented by papers with colored dots on their corners (the dots help a camera recognize the papers).
-            The locations of all programs are claimed to the room so any program can use them.
-            In this case, one paper draws a line from itself to all the other papers on the same wall.
+            The locations of all programs are claimed to the room so any program can use that information.
+            In this case, one program draws a line from itself to all the other programs on the same wall.
         </p>
         <div class='embed-container'><iframe
                 src='https://www.youtube-nocookie.com/embed/srNoF4zLaDU?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
         <p>
-            This video above shows two "data sources": one that is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
-            Both of these data sources show their value and make their current value available to the room.
+            This video above shows two programs that represent data sources:
+            one is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
+            Both of these data sources show their current value and make their current value available to the room.
             Another program is a gauge graph that displays whatever number is claimed by the program above it.
             You can hold the gauge graph in your hand and point it at whatever data source you'd like to be shown on the graph.
-            The spatial relation helps connect the idea that the graph is separate from the data, reusable, and depends on what is is pointing at and nothing else.
+            The spatial relation helps reinforce the idea that the graph is separate from the data, reusable, and depends
+            on what it is pointing at.
+            It is hard to see in the video, but when a program depends on something that it is pointing at, a blue line
+            is projected from the paper into the space the paper is "looking at" to make the dependency visible to people in the room.
         </p>
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/XUQAKwLFuNI?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
         <p>
-            The video above shows how you collect and visualize data over time in a programmable space.
-            A program could be a "data store" that saves the last 20 values from whatever data source is above it.
-            Other programs can look at the "data store" they are pointing at an visualize them or produce a modified set of data.
-            The video above shows a bar graph, filter that only keeps odd values, and a program that shows the average of the data.
+            The video above shows how you could collect and visualize data over time in a programmable space.
+            One program could be a "data store" that saves the last 20 values from whatever data source is above it.
+            Other programs can look at the data store they are pointing at to visualize the data or produce a modified set of data.
+            The video includes a bar graph, a filter that only keeps odd values, and a program that shows the average of the data.
         </p>
         <p>
-            When they are all used the flow of data matches the arrangement of the papers.
-            This is similar to node/graph based visual programming environments like MaxMSP where you can modify a program by rearranging "nodes",
-            but the nodes themselves are chunks of code that you may or may not care about.
-            It is hard to see in the video, but when a program depends on something that is is pointing at, a blue line
-            is projected from the paper into the space the paper is "looking at". This helps show the connection, or potential connection, between papers.
+            Using space to control the flow of data is similar to node/graph based visual programming environments like
+            <a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a> where you create a program by rearranging and connecting "nodes".
+            Nodes range from low level things like list transforms to high level things like a digital piano or a spectrogram.
+            In either case, you can choose to ignore the logic behind the node and treat the node as a block that can be arranged
+            to make different things - this is a nice property that is also present in this programmable space.
         </p>
         <p>
-            One property that I'm especially interested in is a programmable space ability to support understanding by
+            Another property that I'm especially interested in is a programmable space's ability to support understanding by
             being able to recreate itself and not depend on an order.
-            For example, all of these programs in the demo above are independent and magically update when they point at a program that claims something to the
-            room in a format they can work with.
-            Someone new can begin to understand what is going on by removing a program and seeing what happens.
+            All of the programs in the demo above are independent and magically update when they point at a program that claims something to the
+            room in a format it can work with.
+            A person that is new to the space can begin to understand what is going on simply by removing programs and seeing what happens.
             "Undoing" is a simple as putting a piece of paper back where you found it.
-            Because this is normal, there is no harm in someone new to the space to break things.
-            Breaking things encourages you to get a sense of what is important without reading the logic connected to each program.
+            Taking things apart and putting them back together is a great way to learn and it encourages you to get
+            a sense of what is important without reading the code behind each program.
         </p>
 
         <h3 id="text-free-robot-programming">Text-Free Robot Programming</h3>
