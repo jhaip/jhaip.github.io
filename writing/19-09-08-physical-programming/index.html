@@ -38,15 +38,9 @@
 
         <p>
             Previously, I experimented with
-            <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">clipboards representing code</a> and 
-            with a <a href="https://haiperspace.com/writing/19-01-20-research-update/">fixed 3x3 grid of papers</a>
-            on a wall.
-        </p>
-        <p>
-            But the demos have been focused on the textual aspects of code. Pieces of paper with code on them were mapped to code running on a computer.
-            It was nice to interact with physical objects instead of using a single computer monitor,
-            but the real "work" still involved typing code in a little rectangle.
-            The pieces of paper could be moved around the physical world, but in my experiments so far programs were not aware
+            <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">clipboards representing code</a>.
+            It was nice to interact with physical objects but making changes still meant editing code in a text editor.
+            The code clipboards could be moved around the physical world but they were not aware
             of their physical location, the location of other programs, and overall didn't use their physical affordances to change their behavior.
             A piece of code could be moved from a table to the wall, but it would behave the same either way.
         </p>
@@ -58,21 +52,22 @@
                 </div>
                 <div class="col">
                     <img src="desktop-with-many-windows.jpg" />
-                    <small>via https://www.flickr.com/photos/redspotted/7705129</small>
+                    <div>
+                    <small style="float:right"><a href="https://www.flickr.com/photos/redspotted/7705129">source</a></small>
+                    </div>
                 </div>
             </div>
             <small>
-                Unless there are other affordances, the view on the left is too similar to the overcrowded desktop on the right.
+                Unless there are other affordances, the programmable space on the left is too similar to the overcrowded desktop on the right.
             </small>
         </p>
 
         <p>
-            Therefore I wanted to play with non-textual ways of coding.
-            I also wanted to use this idea to gauge how well the system is at supporting physical affordances and to be
-            a platform to prototype new ideas in this area.
+            The rest of this update describes three experiments I did related to non-textual ways of "coding":
+            giving programs spatial awareness, text-free robot programming, and interacting with the room using a laser pointer.
         </p>
         
-        <h3>Spatial Awareness</h3>
+        <h3 id="spatial-awareness">Spatial Awareness</h3>
         <p>
             In a programmable space, programs are in the physical world so they should have properties like other physical things:
         </p>
@@ -128,7 +123,7 @@
             Breaking things encourages you to get a sense of what is important without reading the logic connected to each program.
         </p>
 
-        <h3>Text-Free Robot Programming</h3>
+        <h3 id="text-free-robot-programming">Text-Free Robot Programming</h3>
         <p>
             But the rearranging of code spatially is still based on the concept of textual code and it can be intimidating.
             Therefore I tried out a less intimidating system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
@@ -215,7 +210,7 @@
             </ul>
         </p>
 
-        <h3>Laser Regions</h3>
+        <h3 id="laser-regions">Laser Regions</h3>
         
         <p>
             Therefore I wanted to try out an interaction model where any object in the room could be connected to the room.
@@ -224,7 +219,8 @@
         <p>
             I built a system where you could use a laser pointer to define "regions" in space and an event is fired when one is
             hovered/selected. Laser pointer is like a mouse. Programs in the room can subscribe to what regions are selected or toggled
-            and act that.
+            and act that. Playing with this interaction model was inspired by the "Hypercard in the World" system by CDG Labs
+            as described in the <a href="http://glench.com/LaserSocks/">Laser Socks</a> post by Glen Chiaccchieri.
         </p>
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/OVLIwkPlILg?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
