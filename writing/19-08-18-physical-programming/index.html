@@ -29,7 +29,7 @@
         <img src="robot-angle-shot.jpg" alt="setup" class="gallery-imagee" />
     </p>
         <h1>Physical Programming<br>Research Update 3</h1>
-        <p><small>Sept 7, 2019</small></p>
+        <p><small>Sept 8, 2019</small></p>
 
         <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
         rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
@@ -37,18 +37,18 @@
         </p>
 
         <p>
-            Previously, I experimented with programmable spaces with
+            Previously, I experimented with
             <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">clipboards representing code</a> and 
-            with <a href="https://haiperspace.com/writing/19-01-20-research-update/">fixed 3x3 grid of papers</a>
+            with a <a href="https://haiperspace.com/writing/19-01-20-research-update/">fixed 3x3 grid of papers</a>
             on a wall.
         </p>
         <p>
-            But the demos have been focused on the textual aspects of code. Peices of paper with code on them were mapped to code running on a computer.
+            But the demos have been focused on the textual aspects of code. Pieces of paper with code on them were mapped to code running on a computer.
             It was nice to interact with physical objects instead of using a single computer monitor,
             but the real "work" still involved typing code in a little rectangle.
-            The peices of paper could be moved around the physical world, but in my experiments so far programs were not aware
-            of their physical location, the location of other programs, and overall didn't use their physical afforadances to change their behavior.
-            A peice of code could be moved from a table to the wall, but it would have the behave the same either way.
+            The pieces of paper could be moved around the physical world, but in my experiments so far programs were not aware
+            of their physical location, the location of other programs, and overall didn't use their physical affordances to change their behavior.
+            A piece of code could be moved from a table to the wall, but it would behave the same either way.
         </p>
 
         <p>
@@ -99,8 +99,8 @@
             This video above shows two "data sources": one that is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
             Both of these data sources show their value and make their current value available to the room.
             Another program is a gauge graph that displays whatever number is claimed by the program above it.
-            You can hold the guage graph in your hand and point it at whatever data source you'd like to be shown on the graph.
-            The spatial relation helps connect the idea that the graph is separete from the data, reusable, and depends on what is is pointing at and nothing else.
+            You can hold the gauge graph in your hand and point it at whatever data source you'd like to be shown on the graph.
+            The spatial relation helps connect the idea that the graph is separate from the data, reusable, and depends on what is is pointing at and nothing else.
         </p>
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/XUQAKwLFuNI?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
@@ -119,11 +119,11 @@
         </p>
         <p>
             One property that I'm especially interested in is a programmable space ability to support understanding by
-            being able recreate itself and not depend on an order.
+            being able to recreate itself and not depend on an order.
             For example, all of these programs in the demo above are independent and magically update when they point at a program that claims something to the
             room in a format they can work with.
             Someone new can begin to understand what is going on by removing a program and seeing what happens.
-            "Undoing" is a simple as putting a piece of paper back were you found it.
+            "Undoing" is a simple as putting a piece of paper back where you found it.
             Because this is normal, there is no harm in someone new to the space to break things.
             Breaking things encourages you to get a sense of what is important without reading the logic connected to each program.
         </p>
@@ -140,26 +140,26 @@
             </small>
         </p>
         <p>
-            I can't speak for how affective the Matatalab product is at teaching kids basic coding concepts, but I think their product
+            I can't speak for how effective the Matatalab product is at teaching kids basic coding concepts, but I think their product
             will well designed and I admire them for making a physical and screen-free way to learn.
         </p>
         <p>
             <img src="robot-angle-shot.jpg">
             <small>
-                My text-free robot programming environment
+                My text-free robot programming environment.
             </small>
         </p>
         <p>
             To recreate this idea, I built a board, stand, and "action blocks" out of LEGOs.
             The action blocks had symbols on them to represent actions like "move forward", "turn right", "start a loop", and numbers.
             A webcam looked down at the blocks on the board and feed data into a program that used computer vision to guess the current state of the board.
-            The state of the board was claimed to the room so other programs could use it.
+            The state of the board was claimed to the room so other programs can use it.
         </p>
         <p>
             The robot you programmed was built from a Raspberry Pi and a <a href="https://www.adafruit.com/product/3244">robot chassis</a> using a couple DC Motors.
             A Particle Photon board hooked up to a button would notify the room whenever it's button was pressed.
             Finally, other programs running in the room visualized the state of the board, converted the board into code that made the robot perform the movements, showed the robot code,
-            and told the robot to current the code when the button was pressed.
+            and told the robot to run the code when the button was pressed.
         </p>
         <p>
             <img src="robot-diagram.png" />
@@ -229,7 +229,7 @@
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/OVLIwkPlILg?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
         <p>
-            In this first demo we start with a tiger face made our of construction paper.
+            In this first demo we start with a tiger face made out of construction paper.
             We define a region roughly around the tiger's face and name the region "tiger".
             Another program subscribes to facts about a laser being in a region named "tiger" and shows "RAWR!".
             Because the program is also a piece of paper, we can cut it to make it and the "RAWR" bigger.
@@ -253,7 +253,7 @@
             I'm curious what it would be like to prototype a system were data flow is controlled physically
             like wires in a synthesizer or through magnetic connections in <a href="https://littlebits.com">littleBits</a> products.
             I'm also curious if the laser region demo could be extended to make a basic spreadsheet program
-            on a whiteboard where numbers would be phsyically written on a grid drawn on the whiteboard.
+            on a whiteboard where numbers would be physically written on a grid drawn on the whiteboard.
             Spreadsheets have been the defining app of computers and I wonder what their place would be
             in a programmable space.
         </p>
@@ -263,7 +263,7 @@
                 <li>Handling and persisting larger data sources like camera images or measurements over a long period of time.</li>
                 <li>Lack of visibility into program errors. Currently debugging requires switching back to a traditional computer.</li>
                 <li>Calibrating camera and projectors for computer vision to work in a variety of day-night lighting conditions.</li>
-                <li>Efficienctly syndicating claims about the room between computers in the space.</li>
+                <li>Efficiently syndicating claims about the room between computers in the space.</li>
             </ul>
         </p>
         <br>
