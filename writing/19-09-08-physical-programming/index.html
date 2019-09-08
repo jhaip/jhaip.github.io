@@ -129,8 +129,8 @@
 
         <h3 id="text-free-robot-programming">Text-Free Robot Programming</h3>
         <p>
-            But the rearranging of code spatially is still based on the concept of textual code and it can be intimidating.
-            Therefore I tried out a less intimidating system where there is no text by recreating the coding robot for kids by <a href="matatalab.com">Matatalab</a>.
+            Even when programs have spatial awareness and can be rearranged to modify their behavior, the programs are still based on textual code and that can be intimidating.
+            Therefore I tried out a less intimidating system where there is no text by recreating the coding robot for kids by <a href="https://matatalab.com/">Matatalab</a>.
         </p>
         <p>
             <img src="matatalab-set.jpg" />
@@ -140,7 +140,7 @@
         </p>
         <p>
             I can't speak for how effective the Matatalab product is at teaching kids basic coding concepts, but I think their product
-            will well designed and I admire them for making a physical and screen-free way to learn.
+            is well designed and I admire them for making a physical and screen-free way to learn coding concepts.
         </p>
         <p>
             <img src="robot-angle-shot.jpg">
@@ -150,26 +150,26 @@
         </p>
         <p>
             To recreate this idea, I built a board, stand, and "action blocks" out of LEGOs.
-            The action blocks had symbols on them to represent actions like "move forward", "turn right", "start a loop", and numbers.
-            A webcam looked down at the blocks on the board and feed data into a program that used computer vision to guess the current state of the board.
-            The state of the board was claimed to the room so other programs can use it.
+            The action blocks had symbols on them to represent robot actions like "move forward", "turn right", or "start a loop".
+            A program determined the current state of the board by using computer vision on pictures from a webcam that looked down at the blocks on the board.
+            The state of the board was claimed to the room so other programs could use the information.
         </p>
         <p>
             The robot you programmed was built from a Raspberry Pi and a <a href="https://www.adafruit.com/product/3244">robot chassis</a> using a couple DC Motors.
-            A Particle Photon board hooked up to a button would notify the room whenever it's button was pressed.
-            Finally, other programs running in the room visualized the state of the board, converted the board into code that made the robot perform the movements, showed the robot code,
+            The start button was made from a Particle Photon board that notified the room whenever a button wired to it was pressed.
+            Finally, other programs running in the room visualized the state of the board, converted the board into code that made the robot perform the movements, showed the compiled robot code,
             and told the robot to run the code when the button was pressed.
         </p>
         <p>
             <img src="robot-diagram.png" />
             <small>
-                Overall architecture of this demo. Messages syndicated between brokers are shown on the top in blue.
+                Overall architecture of this demo. Messages syndicated between brokers are shown at the top in blue.
             </small>
         </p>
         <p>
-            Each computer in the room was running the exact same "room <a href="https://en.wikipedia.org/wiki/Message_broker">message broker</a>" that allowed programs to make claims
+            Each computer in the room ran the same "room <a href="https://en.wikipedia.org/wiki/Message_broker">message broker</a>" that allowed programs to make claims
             to the room and for claims to be syndicated between computers.
-            The only difference between the computers was what programs were running on them and what things were connected to them like cameras, motors, or projectors.
+            The only difference between the computers was what programs were running on them and what peripherals they were connected to.
         </p>
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/277migTZoKs?rel=0' frameborder='0'
                 allowfullscreen></iframe></div>
@@ -178,38 +178,34 @@
         </p>
         <p>
             <ul class="dashed">
-                <li>
-                    Claiming things about the room is a nicer abstraction that works well across computers.
-                    It's nice that programs running on the same computer and programming running on different computers all communicate in the same way.
-                    The protocol is defined.
+                <li>Programs running on the same computer and programs running on different computers all communicate in the same way:
+                    adding and removing claims from the room's shared fact table.
+                    Having a unified protocol is nice.
+                </li>
+                <li>Because programs communicate globally in the shared fact table, it is easy to integrate and prototype related programs.
+                    The board visualization and the compiled code display weren't needed for the demo, but they were the easiest programs to make and were helpful tools to see inside the system.
                 </li>
                 <li>
-                    Because programs communicated via a shared fact table, it encourages programs to be broken apart.
-                    For example in the text-free robot demo, the board vision code was separate from the board-to-robot-code compiler and the robot itself.
-                    Because programs communicate globally, it is easy to integrate and prototype related programs.
-                    The board visualization and the compiled code display weren't needed for the demo, but they were the easiest programs to make and were helpful tools to see into the system.
-                </li>
-                <li>
-                    Live updates come for free
+                    Live updates come for free!
                 </li>
             </ul>
         </p>
         <p>
-            But even without having text, it's still has the feel of coding: syntax errors, etc. Objects themselves were also
-            "technical".
+            But even without text, this text-free robot programming demo did not avoid annoying technical issues related to coding like syntax errors. The objects themselves were also
+            "technical":
         </p>
         <p>
             <ul class="dashed">
                 <li>
-                    <strong>Papers:</strong>
-                    Although it was made from regular printed paper - they required special colored dots in the corners for tracking. The
-                    papers could be drawn on and cut in the middle, but the dots in the corners were required. If you had an existing object
-                    → you could either try to put dots around it or you'd have to have the technical knowledge to track it.
+                    <strong>Paper programs:</strong>
+                    Although they were made from regular printed paper they required special colored dots in the corners for tracking. The
+                    papers could be drawn on and cut in the middle, but the dots in the corners were required. Connecting an existing physical object to the room
+                    either meant putting the corner dots around it (ugly) or having the technical knowledge to track its position.
                 </li>
                 <li>
-                    <strong>Text-Free Tiles</strong>
-                    Like the dots, it was a special object that could only recognize the prebuilt tiles. Special technical knowledge needed
-                    to detect them and someone new would have to understand the system to extend it.
+                    <strong>Text-Free Blocks:</strong>
+                    Like the dots, they are special objects that required special technical knowledge
+                    to detect them. Adding new blocks was not easy for someone new to the space.
                 </li>
             </ul>
         </p>
@@ -217,12 +213,13 @@
         <h3 id="laser-regions">Laser Regions</h3>
         
         <p>
-            Therefore I wanted to try out an interaction model where any object in the room could be connected to the room.
-            Examples: Something you drew or a book.
+            Next, I played with an interaction model that doesn't require special technical skills to connect new objects to the room.
         </p>
         <p>
-            I built a system where you could use a laser pointer to define "regions" in space and an event is fired when one is
-            hovered/selected. Laser pointer is like a mouse. Programs in the room can subscribe to what regions are selected or toggled
+            In this demo you use a laser pointer to define "regions" in space. An event is fired when a region is
+            hovered/selected with the laser pointer.
+            The laser pointer acts as a sort of cursor for the room that can be pointed anywhere in 3D space and can be seen by both people and the computer system.
+            Programs in the room can subscribe to what regions are selected or toggled
             and act that. Playing with this interaction model was inspired by the "Hypercard in the World" system by CDG Labs
             as described in the <a href="http://glench.com/LaserSocks/">Laser Socks</a> post by Glen Chiaccchieri.
         </p>
