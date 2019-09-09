@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+        .system-code {
+            color: purple;
+        }
+        .code-comment {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+    <p>
+        <img src="robot-angle-shot.jpg" alt="setup" class="gallery-imagee" />
+    </p>
+        <h1>Physical Programming<br>Research Update 3</h1>
+        <p><small>Sept 8, 2019</small></p>
+
+        <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
+        rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
+        virtual ones on a screen. Bringing computing to scale of a room makes it a communal and social experience.
+        </p>
+
+        <p>
+            Previously, I experimented with
+            <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">clipboards representing code</a>.
+            It was nice to interact with physical objects but making changes still meant editing code in a text editor.
+            The code clipboards could be moved around the physical world but they were not aware
+            of their physical location, the location of other programs, and overall didn't use their physical affordances to change their behavior.
+            A piece of code could be moved from a table to the wall, but it would behave the same either way.
+        </p>
+
+        <p>
+            <div class="col-2">
+                <div class="col">
+                    <img src="many-programs-on-wall.jpg" />
+                </div>
+                <div class="col">
+                    <img src="desktop-with-many-windows.jpg" />
+                    <div>
+                    <small style="float:right"><a href="https://www.flickr.com/photos/redspotted/7705129">source</a></small>
+                    </div>
+                </div>
+            </div>
+            <small>
+                Unless there are other affordances, the programmable space on the left is too similar to the overcrowded desktop on the right.
+            </small>
+        </p>
+
+        <p>
+            The rest of this update describes three experiments I did related to non-textual ways of "coding":
+            giving programs spatial awareness, text-free robot programming, and interacting with the room using a laser pointer.
+        </p>
+        
+        <h3 id="spatial-awareness">Spatial Awareness</h3>
+        <p>
+            In a programmable space, programs are in the physical world so they should have properties like other physical things:
+        </p>
+        <ul class="dashed">
+            <li>You can hold them in your hands. You can move them around.</li>
+            <li>They can have physical affordances to suggest that they be used a certain way.
+                Switches can be actual switches instead of an illustration of one.
+                Paper is a nice physical representation of a program because it can be drawn on, pinned up on walls, or recycled when it isn't needed.</li>
+            <li>They can "see" what other programs are around them and change their behavior.
+                If several programs are arranged in a row this could imply a chain of influence.
+                A region in space like a particular table can be used to imply a grouping that means something to the programs on that table versus programs on a different table. 
+            </li>
+        </ul>
+        <br>
+        <img src="lines-to-other-papers.jpg">
+        <p>
+            In the photo above, programs are represented by papers with colored dots on their corners (the dots help a camera recognize the papers).
+            The locations of all programs are claimed to the room so any program can use that information.
+            In this case, one program draws a line from itself to all the other programs on the same wall.
+        </p>
+        <div class='embed-container'><iframe
+                src='https://www.youtube-nocookie.com/embed/srNoF4zLaDU?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            The video above shows two programs that represent "data sources":
+            one is a number that counts from 0 to 100 repeatedly and another is the angle of the paper in degrees.
+            Both of these data sources show their current value and make their current value available to the room.
+            Another program is a gauge graph that displays whatever number is claimed by the program above it.
+            You can hold the gauge graph in your hand and point it at whatever data source you'd like to be shown on the graph.
+            The spatial relation helps reinforce the idea that the graph is separate from the data, reusable, and depends
+            on what it is pointing at.
+            It is hard to see in the video, but when a program depends on something that it is pointing at, a blue line
+            is projected from the paper into the space the paper is "looking at" to make the dependency visible to people in the room.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/XUQAKwLFuNI?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            The video above shows how you could collect and visualize data over time in a programmable space.
+            One program could be a "data store" that saves the last 20 values from whatever data source is above it.
+            Other programs can look at the data store they are pointing at to visualize the data or produce a modified set of data.
+            The video includes a bar graph, a filter that only keeps odd values, and a program that shows the average of the data.
+        </p>
+        <p>
+            Using space to control the flow of data is similar to node/graph based visual programming environments like
+            <a href="https://en.wikipedia.org/wiki/Max_(software)">Max/MSP</a> where you create a program by rearranging and connecting "nodes".
+            Nodes range from low level things like list transforms to high level things like a digital piano or a spectrogram.
+            In either case, you can choose to ignore the logic behind the node and treat the node as a block that can be arranged
+            to make different things &mdash; this is a nice property that is also present in this programmable space.
+        </p>
+        <p>
+            Another property that I'm especially interested in is a programmable space's ability to support understanding by
+            being able to recreate itself and not depend on an order.
+            All of the programs in the demo above are independent and magically update when they point at a program that claims something to the
+            room in a format they can work with.
+            A person that is new to the space can begin to understand what is going on by removing programs and seeing what happens.
+            "Undoing" is as simple as putting a piece of paper back where you found it.
+            Taking things apart and putting them back together is a great way to learn and it encourages you to get
+            a sense of what is important without reading the code behind every program.
+        </p>
+
+        <h3 id="text-free-robot-programming">Text-Free Robot Programming</h3>
+        <p>
+            Even when programs have spatial awareness and can be rearranged to modify their behavior, the programs are still based on textual code and that can be intimidating.
+            Therefore I tried out a less intimidating system where there is no text by recreating the coding robot for kids by <a href="https://matatalab.com/">Matatalab</a>.
+        </p>
+        <p>
+            <img src="matatalab-set.jpg" />
+            <small>
+                Matatalab's Coding Set: Colored tiles with symbols on them (left) are placed on a board (middle) to program the robot (right).
+            </small>
+        </p>
+        <p>
+            I can't speak for how effective the Matatalab product is at teaching kids basic coding concepts, but I think their product
+            is well designed and I admire them for making a physical and screen-free way to learn coding concepts.
+        </p>
+        <p>
+            <img src="robot-angle-shot.jpg">
+            <small>
+                My text-free robot programming environment.
+            </small>
+        </p>
+        <p>
+            To recreate this idea, I built a board, stand, and "action blocks" out of LEGOs.
+            The action blocks had symbols on them to represent robot actions like "move forward", "turn right", or "start a loop".
+            A program determined the current state of the board by using computer vision on pictures from a webcam that looked down at the blocks on the board.
+            The state of the board was claimed to the room so other programs could use the information.
+        </p>
+        <p>
+            The robot you programmed was built from a Raspberry Pi and a <a href="https://www.adafruit.com/product/3244">robot chassis</a> using a couple DC Motors.
+            The start button was made from a Particle Photon board that notified the room whenever a button wired to it was pressed.
+            Finally, other programs running in the room visualized the state of the board, converted the board into code that made the robot perform the movements, showed the compiled robot code,
+            and told the robot to run the code when the button was pressed.
+        </p>
+        <p>
+            <img src="robot-diagram.png" />
+            <small>
+                Overall architecture of this demo. Messages syndicated between brokers are shown at the top in blue.
+            </small>
+        </p>
+        <p>
+            Each computer in the room ran the same "room <a href="https://en.wikipedia.org/wiki/Message_broker">message broker</a>" that allowed programs to make claims
+            to the room and for claims to be syndicated between computers.
+            The only difference between the computers was what programs were running on them and what peripherals they were connected to.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/277migTZoKs?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            I liked this text-free robot demo because it was fun to play with and because it showed some nice properties of the programmable space system:
+        </p>
+        <p>
+            <ul class="dashed">
+                <li>Programs running on the same computer and programs running on different computers all communicate in the same way:
+                    adding and removing claims from the room's shared fact table.
+                    Having a unified protocol is nice.
+                </li>
+                <li>Because programs communicate globally through the shared fact table, it is easy to integrate and prototype related programs.
+                    The board visualization and the compiled code display weren't needed for the demo, but they were the easiest programs to make and were helpful tools to see inside the system.
+                </li>
+                <li>
+                    Live updates come for free!
+                </li>
+            </ul>
+        </p>
+        <p>
+            But even without text, this text-free robot programming demo did not avoid annoying technical issues related to coding like syntax errors. The objects themselves were also
+            "technical":
+        </p>
+        <p>
+            <ul class="dashed">
+                <li><strong>Paper programs:</strong>
+                    Although they were made from regular printed paper they required special colored dots in the corners for tracking. The
+                    papers could be drawn on and cut in the middle, but the dots in the corners were required. Connecting an existing physical object to the room
+                    either meant putting the corner dots around it (ugly) or having the technical knowledge to track its position.
+                </li>
+                <li><strong>Text-Free Blocks:</strong>
+                    Like the dots, they are special objects that required special technical knowledge
+                    to detect them. Adding new blocks was not easy for someone new to the space.
+                </li>
+            </ul>
+        </p>
+
+        <h3 id="laser-regions">Laser Regions</h3>
+        
+        <p>
+            Next, I played with an interaction model that didn't require special technical skills to connect new objects to the room.
+        </p>
+        <p>
+            You can define special "regions" in the room by tracing their outline with a laser pointer.
+            Afterwards, an event is fired when a region is hovered/selected by a laser pointer.
+            The laser pointer acts as a sort of cursor for the room that can be pointed anywhere in 3D space and can be seen by both people and the computer system.
+            Programs in the room can subscribe to what regions are selected or toggled
+            and act on that. Playing with this interaction model was inspired by the "Hypercard in the World" system by CDG Labs
+            as described in the <a href="http://glench.com/LaserSocks/">Laser Socks</a> post by Glen Chiaccchieri.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/OVLIwkPlILg?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            In this first demo we start with a tiger face made out of construction paper.
+            A region is roughly defined around the tiger's face and the region is named "tiger".
+            Another program subscribes to facts about a laser being in a region named "tiger" and shows "RAWR!".
+            Because the program is also a piece of paper, we can cut it to make it and the "RAWR!" bigger.
+        </p>
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/xSSVTTso0LM?rel=0' frameborder='0'
+                allowfullscreen></iframe></div>
+        <p>
+            My partner and I have a map with pins of restaurants we have visited together over the years.
+            The map is interesting by itself but static so in this demo I added some magic to allow you to select a region on the map
+            to see the neighborhood name and the restaurants we went to.
+            To make this, I first outlined and named each neighborhood region on the map using the laser pointer.
+            Then I made a new program that subscribed to claims about regions being toggled and
+            if the region name matched a neighborhood that the program had a list of restaurants for, it would display that list.
+        </p>
+        <p>
+            I liked how the laser regions allowed the map to be a normal and beautiful object by itself
+            and only supplemented by the digital annotations if you interacted with it.
+            I think there is a lot of opportunity around the idea of annotating physical objects and using a laser pointer as
+            a room-scale selection tool.
+        </p>
+
+        <h3>Future Work</h3>
+        <p>
+            These three demos showed me that the programmable space system is a pretty good platform
+            for prototyping new ideas and using the physical affordances of objects.
+            I'm curious what it would be like to prototype a system where data flow is controlled physically
+            like wires in a synthesizer or through magnetic connections in <a href="https://littlebits.com">littleBits</a> products.
+            I'm also curious if the laser region demo could be extended to make a basic spreadsheet program
+            on a whiteboard where the numbers would be written by hand.
+            Spreadsheets have been the defining application of computers and I wonder what their place would be
+            in a programmable space.
+        </p>
+        <p>
+            These prototypes also revealed some rough edges of the system that I'd like to iterate more on:
+            <ul class="dashed">
+                <li>Handling and persisting larger data sources like camera images or measurements over a long period of time.</li>
+                <li>Lack of visibility into program errors. Currently debugging requires switching back to a traditional computer.</li>
+                <li>Calibrating camera and projectors for computer vision to work in a variety of day-night lighting conditions.</li>
+                <li>Efficiently syndicating claims about the room between computers in the space.</li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            If you have thoughts or questions, feel free to email or reach out to me on <a
+                href="https://twitter.com/jhaip">Twitter</a>.
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+    </body>
+</html>
