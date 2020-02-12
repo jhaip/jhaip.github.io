@@ -179,45 +179,47 @@
 
         <h4>Lessons Learned:</h4>
         <p>
-            Some things worked well:
+            Most things worked well and this demo confirmed a programmable space system can be portable while still being interesting.
         </p>
         <ul class="dashed">
-            <li>Very quick to go from no code to understanding and making something new.</li>
-            <li>Masterlist was an effective tool for understanding the capabilities of a system. Explanation of how things work would
-            normally come from other people, but it is a useful baseline inspector and debugging tool.</li>
-            <li>Receipt paper was ok for short demo code. No code written ran out of space.</li>
-            <li>This confirmed the system can be portable while still being fun.</li>
+            <li>It was quick to go from no code to understanding and making something new. Making a first program took about 1 minute.</li>
+            <li>The list of programs and their claims and subscriptions was an effective tool for understanding the capabilities of the room.
+                It served the dual role of explaining the capabilities of the room to new people and helping debug new programs being made.
+            </li>
+            <li>Receipt paper was a good fit for programs. It was fast to print and easily disposable.</li>
         </ul>
         <p>But some things weren't great:</p>
         <ul class="dashed">
             <li>
-                Length of code is very limited and words often wrap lines in an ugly way
+                Length of code is very limited and words often wrap lines in an ugly way.
+                The receipt printer I used was limited to 32 characters wide.
                 <br/>
                 <p>
                     <center><img src="long-receipt.jpg" /></center>
                 </p>
             </li>
-            <li>Very limited outputs that can be explored too quickly.
-                Many traditional tests of GUIs involve displaying text, that was totally missing in this demo but would be useful.</li>
-            <li>Some critical parts were too slow → RFID sensing, web display, circuit playground update via UART</li>
-            <li>No display of errors</li>
+            <li>Having the output limited to just the Circuit Playground board made this demo just a toy.
+                I missed having some graphical or textual display.</li>
+            <li>Besides having short programs, the demo did not help people avoid classic programming mistakes
+                like syntax errors and misspelled variable names.
+            </li>
         </ul>
 
         <p>
-            Overall, card-size programs seem like a promising directions for informal objects that can live around a home. I think it is important that the system
-            be always running so that people can be ignored normally but then used immediately. Projectors and cameras are a lot of
-            to have always on inside a home and personally I have always been turning them off. This is the first system I noticed
-            myself leaving on and <i>ignoring</i>.
+            Overall, card-size programs seem like a promising directions for informal objects that can live in a home. I think it is important that the system
+            be always running so that it can be normally ignored but then used immediately. Projectors and cameras are a lot "tech"
+            to have always on inside a home and I have always been turning them off.
+            I have the similiar feelings about VR and AR: they aren't something I want to have on all the time.
+            This RFID card system was the first prototype I noticed myself leaving on and <i>ignoring</i>.
         </p>
         <p>
-            I feel confident enough for to expand the system to scale up this demo and extend the system to multiple rooms. This is
-            both an exiting new milestone in my goal to have the technology live everywhere while also bring challenges of
-            multi-room coordination. For example, how to multiple rooms share code between each other? Now see the need for a way
+            I'm curious how the RFID card's ideas will scale up to multiple rooms.
+            Going beyond one room is an existing milestone in my vision to have the technology live everywhere while also bring challenges of
+            multi-room coordination. For example, how to multiple rooms share code between each other? I foresee the need for a way
             for cards to transform sizes or sensing modes (ex: transforming a card program into a full size paper) so code longer than a card can be written.
         </p>
         <p>
-            The tabletop card game metaphor also makes me want to make a board game using the system. I look forward to game jams
-            using this version of programmable space.
+            The tabletop card game parallel also makes me want to make a social and room-scale board game using this card system.
         </p>
 
         <br>
