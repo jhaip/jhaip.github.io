@@ -33,39 +33,38 @@
 
         <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
         rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
-        virtual ones on a screen. Bringing computing to scale of a room makes it a communal and social experience.
+        virtual ones on a screen. Bringing computing to the scale of a room makes it a communal and social experience.
         </p>
 
         <p>
             When describing programmable spaces to other people I usually end up saying "you just have to see it in person." My previous
             explorations have relied on room installations of cameras and projectors and careful calibration so I rarely transported
             the system. I wondered what the "minimum viable demo" was and if the programmable space idea could be
-            simplified and made mobile without loosing its emergent properties.
+            simplified and made mobile without losing its emergent properties.
         </p>
         <p>
-            A common idea throughout all of my programmable space explorations has been the physical manifestation of code &mdash; mainly
-            source code printed on full size pieces of paper and annotated with dots so cameras could track the papers.
-            For a minimum viable demo, the code needed to be small, portable, and easy to sense without much setup or calibration.
+            A common idea throughout all of my programmable space explorations has been the physical manifestation of code &mdash; primarily
+            source code printed on full size pieces of paper with annotations like colored dots so cameras can track the papers.
+            For a minimum viable demo, the physical manifestation of code needs to be small, portable, and easy to sense without much setup or calibration.
             Tabletop card games seemed like a good parallel: they
             are portable, familiar, and can have complex rule systems built up from effects described on the cards themselves. I
-            also like games as parallel for learning in the hopes that the programmable space would be designed for play and self guided
+            also like games as parallel in the hopes that the programmable space would be designed for play and self guided
             exploration and not "serious matters".
         </p>
         <p>
-            In this attempt at a "minimum viable programmable space", programs are represented physically by RFID cards
-            in a plastic sleeve with the program source code printed on receipt paper.
+            In this attempt at a minimum viable programmable space, programs are represented physically by RFID cards
+            in plastic sleeves with the program source codes printed on receipt paper.
         </p>
         <p>
             <center><img src="when-see-card.jpg" /></center>
         </p>
         <p>
             Programs are run when they are placed on a stand that has a RFID sensor behind it.
-            One of the core ideas of the programmable space is that all code should be out in the room and shown in a way that people can read the code and learn what is going on. The
-            receipt paper code helps people understand what a program does and the RFID card helps the computers know what the program does.
+            One of the core ideas of a programmable space is that all code should be out in the room and shown in a way that people can read the code and learn what is going on. The
+            code printed on the receipt paper helps people understand what a program does and the RFID card helps the room system know where each program is.
             This setup is similar to my <a href="https://haiperspace.com/writing/19-03-17-programmable-space/">March 2019 exploration</a> that
             used full sized pieces of papers and clipboards.
         </p>
-
         <p>
             <center>
             <img src="setup-overview.jpg" />
@@ -80,16 +79,17 @@
             then its code is run. On the left is the program editor: When a program is placed on the left-most sensor, its
             source code is shown on the editor. When a new version of a program's code is saved, it is printed out on the
             receipt printer to the left of the editor. On the right screen is a list of all the facts and subscriptions for
-            running programs: this is tool to understand the inputs and outputs of the room without having to read all the
-            code. In the middle of the desk is a <a href="https://www.adafruit.com/product/3333">Circuit Playground Express</a> &mdash; an electronic board with lights, buttons, and sensors
-            built in. Its buttons, light sensors, lights, and speaker is connected to the room.
+            running programs: this is a tool for seeing the inputs and outputs of the room without having to read all the
+            code. In the middle of the desk is a <a href="https://www.adafruit.com/product/3333">Circuit Playground Express</a> &mdash; an electronic board with many built in sensors and outputs.
+            Its buttons, light sensors, lights, and speaker are connected to the room.
         </p>
         <p>
             <center>
                 <img src="masterlist.png" />
                 <div>
                     <small>
-                        The list of running programs and their subscriptions and claims to the room.
+                        The list of running programs and their subscriptions and claims to the room.<br />
+                        It is shown on the screen on the right side of the desk.
                     </small>
                 </div>
             </center>
@@ -97,7 +97,7 @@
 
         <p>
             But this demo was more constrained than my other programmable space demos and I wondered if the idea could be compressed
-            this small. Only a few programs could run at the same time and the only physical inputs and outputs where on
+            this small. Only a few programs can run at the same time and the only inputs and outputs are on
             the same little electronic board. Maybe it needed the emergent properties of being room-scale to make sense.
         </p>
 
@@ -105,17 +105,17 @@
             I have also thought a lot about the idea from Andy Matuschak and Michael Nielsen's
             essay <a href="https://numinous.productions/ttft/#serious-work">How can we develop
             transformative tools for thought?</a> where they
-            differentiate an <i>education media</i> and <i>canonical media</i>. Educational media may be simple and easy, but is not
-            used by a serious professional to do real work. On the hand, canonical media
+            differentiate an <i>education media</i> and <i>canonical media</i>. Educational media may be simple and easy, but it is not
+            used by professionals to do real work. On the other hand, canonical media
             "expand[s] its range, and set a new standard widely known amongst creators in that medium". My aspiration for this
             project is not to create a toy, but be a medium that surpasses current limitations of how technology can live naturally in
-            a space while also empowering more people to create and think with computers.
+            a space while also empowering more people to create and think with computational ideas.
         </p>
 
         <p>
             I tested the minimum prograble space with a couple people to see if it was a hint of the future or just a toy. The test was
             designed to introduce the system to someone that had written some code (not necessarily professionally) through a collaborative explanation. The goal was to see how quickly they understood the system and if they were able to
-            get past the technology challenges and into creative play.
+            get past the technology and into creative play.
         </p>
 
         <h4 id="test-procedure">Test Procedure:</h4>
@@ -135,8 +135,8 @@
                     allowfullscreen></iframe></div>
         </p>
         <p>
-            Make your first program by taking an empty program off the stack, writing the source code using the editor, printing the code,
-            and then putting it on a stand.
+            Make a first program by taking an empty program off the stack, writing the source code using the editor, printing the code,
+            and then putting it on a stand to run it.
             <br/>
             <div style="padding:56.25% 0 0 0;position:relative;"><iframe
                     src="https://player.vimeo.com/video/390743606?loop=1&byline=0&portrait=0"
@@ -145,16 +145,17 @@
             <script src="https://player.vimeo.com/api/player.js"></script>
         </p>
         <p>
-            The goal is that people in the space can pick up a program and get a sense of what it does.
+            The goal is that people can look at any program in the room and get a sense of what it does.
             Show them a card and have them describe what it does.
             <br />
             <center><img src="reading-code.jpg" /></center>
         </p>
         <p>
-            Freeform play using the buttons, lights, and sensors of the Circuit Playgrond.
-            The Circuit Playground's abilities are show in the list of programs and serve as a reference
+            The rest of the test is spent on freeform play using the buttons, lights, and sensors of the Circuit Playground.
+            The Circuit Playground's abilities are shown in the list of programs and serve as a reference
             for new programs that want to use its inputs and outputs.
         </p>
+        <p>Here are a few example programs made during this time:</p>
         <p>
             <div style="padding:56.25% 0 0 0;position:relative;"><iframe
                     src="https://player.vimeo.com/video/390752515?loop=1&byline=0&portrait=0"
@@ -182,17 +183,17 @@
             Most things worked well and this demo confirmed a programmable space system can be portable while still being interesting.
         </p>
         <ul class="dashed">
-            <li>It was quick to go from no code to understanding and making something new. Making a first program took about 1 minute.</li>
+            <li>It was quick to go from no code to understanding and making something new. Making the first program took about 1 minute.</li>
             <li>The list of programs and their claims and subscriptions was an effective tool for understanding the capabilities of the room.
-                It served the dual role of explaining the capabilities of the room to new people and helping debug new programs being made.
+                It served the dual role of explaining the capabilities of the room to new people and helping debug programs.
             </li>
-            <li>Receipt paper was a good fit for programs. It was fast to print and easily disposable.</li>
+            <li>Receipt paper was nice for this small setup. It was fast to print and easily disposable.</li>
         </ul>
         <p>But some things weren't great:</p>
         <ul class="dashed">
             <li>
-                Length of code is very limited and words often wrap lines in an ugly way.
-                The receipt printer I used was limited to 32 characters wide.
+                The length of code that fits on one side of a card is very limited and lines wrap in ugly ways.
+                The receipt printer I used was limited to 32 characters wide which is not big enough for most lines of source code.
                 <br/>
                 <p>
                     <center><img src="long-receipt.jpg" /></center>
@@ -207,19 +208,19 @@
 
         <p>
             Overall, card-size programs seem like a promising directions for informal objects that can live in a home. I think it is important that the system
-            be always running so that it can be normally ignored but then used immediately. Projectors and cameras are a lot "tech"
-            to have always on inside a home and I have always been turning them off.
-            I have the similiar feelings about VR and AR: they aren't something I want to have on all the time.
+            be always running so that it can be normally ignored but then used immediately. The projectors and cameras used
+            in my other programmable space prototypes are too intrusive to have always on inside a home and I have been turning them off when not in use.
+            I have similar feelings about VR and AR: they aren't something I want to have on all the time.
             This RFID card system was the first prototype I noticed myself leaving on and <i>ignoring</i>.
         </p>
         <p>
             I'm curious how the RFID card's ideas will scale up to multiple rooms.
-            Going beyond one room is an existing milestone in my vision to have the technology live everywhere while also bring challenges of
-            multi-room coordination. For example, how to multiple rooms share code between each other? I foresee the need for a way
-            for cards to transform sizes or sensing modes (ex: transforming a card program into a full size paper) so code longer than a card can be written.
+            Going beyond one room is an exciting milestone in my vision to have the technology live everywhere while also bringing challenges of
+            multi-room coordination. For example, how do multiple rooms share code between each other? I foresee the need for a way
+            for cards to transform sizes or sensing modes (i.e. transforming a card program into a full size paper program) so code longer than a card can be written.
         </p>
         <p>
-            The tabletop card game parallel also makes me want to make a social and room-scale board game using this card system.
+            The tabletop card game parallel has also inspired me to make a social and room-scale board game using this card system.
         </p>
 
         <br>
