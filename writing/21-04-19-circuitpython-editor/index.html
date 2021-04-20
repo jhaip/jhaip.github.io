@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+        .system-code {
+            color: purple;
+        }
+        .code-comment {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+    <p>
+        <img src="rfid-card-cover.png" alt="setup" class="gallery-imagee" />
+    </p>
+        <h1>CircuitPython Editor</h1>
+        <p><small>April 19, 2021</small></p>
+
+        <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
+        rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
+        virtual ones on a screen. Bringing computing to the scale of a room makes it a communal and social experience.
+        </p>
+
+        <p>
+            I want to inspire and empower more people to make and personalize electronic objects in their homes.
+            I made a new way to reprogram electronic boards inside these objects that is good for multiple people casually
+            making changes to the objects, as opposed to the individualistic making experience today.
+            Boards are reprogrammed by swapping out physical "trading card" sized programs and when edits are needed,
+            an integrated program editor is there.
+            Objects are also build from the ground up to be connected to the rest of the room without any setup.
+        </p>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/390751773?byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+          <center><small>TODO short demo video</small></center>
+        </p>
+
+        <h4>How tools electronics tools today are focus on the individual</h4>
+        <p>
+          Code is edited and saved on your own personal computer. This is probably the original maker's computer and
+          for anyone to edit the code they have to somehow get the program onto their own computer. Lots of permission issues and sharing hurdles here.
+
+          The electronic devices are hide away their source code where someone who is not the original maker cannot
+          see or modify the existing code without completely overriding the object's code.
+
+          No way for someone else to temporarily change the behavior of a device and then revert back to the original behavior.
+          If this isn't possible then people won't want to editor devices for fear of messing up the original creator's work.
+
+          Missing a friendlier interface for basic changes that don't need a full computer code editor experience.
+          Editing does not support "technophobes" who are intimidated by computers, let alone people who think they can't program.
+        </p>
+
+        <h4>A story about roomates making plant soil sensors</h4>
+
+        <p>
+          Two people living together and they have some plants. One roommate keeps forgetting to water the plants so they come up
+          with an idea for a soil moisture sensor that shows red light when dry.
+        </p>
+        <p>
+          They could just write it down on paper but it would be cooler to make someone yourself that was a little smarter than paper.
+          They could just buy one but then you have to register for an account, rely on the company for updates, and don't have control
+          of how it looks and what you want is pretty simple.
+        </p>
+        <p>
+          TODO: work on this: You buy another plants and want to set up a display to monitor with three smiley faces.
+          Roommate buys another plant and wants to add it to the dashboard.
+        </p>
+
+        <h5>You making the first soil sensor</h5>
+        <p>First roommate buys stemma qt plant sensor and a circuit playground bluefruit from Adafruit</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old: write a little code to show red using Mu on your computer
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New: using circuit python editor to write code on a RFID card. Print it and make a little drawing of what it does.
+                Iterate on the code a few times to get it to work and print the final version of code.
+            </small>
+          </div>
+        </div>
+
+        <h5>You making the second sensor</h5>
+        <p>First roommate buys more materials for the second sensor.</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old: You already have the code project saved on your computer so it's easy to copy it to new board.
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New: You already have the code project saved on your computer so it's easy to copy it to new board.
+            </small>
+          </div>
+        </div>
+
+        <h5>You making the dashboard</h5>
+        <p>Some basic description</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old: Write some custom code on your computer to connect to device via BLE and render it in some GUI. This a small but non-trival application to build.
+                Save this source code on your computer and write no documentation about how it works.
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New
+            </small>
+          </div>
+        </div>
+
+        <h5>Your roommate making the third sensor</h5>
+        <p>Some basic description</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New
+            </small>
+          </div>
+        </div>
+
+        <h5>Your roommate updating the dashboard to include sensor #3</h5>
+        <p>Some basic description</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New
+            </small>
+          </div>
+        </div>
+
+        <h5>Summary</h5>
+        <p>Some basic description</p>
+        <div class="table-row">
+          <div class="table-row--left">
+            <img src="setup-overview.jpg" />
+            <small>
+                Old
+            </small>
+          </div>
+          <div class="table-row--right">
+            <img src="setup-overview.jpg" />
+            <small>
+                New
+            </small>
+          </div>
+        </div>
+
+        <h4>Program cards, editor, and room connection in detail</h4>
+
+        <strong>Program cards</strong>
+        <p>
+          Program cards are just physical representation of code in a file on some computer.
+          Physical representation is important so you can put the code physically next to
+          the object you want to edit and so you can physically see the options you have.
+        </p>
+        <p>
+          In my demo I have program cards containing both a printout of the full source code
+          and a trading-card like front where you can make a drawing and write a short
+          description of what the code does.
+          
+          The drawing makes the physical cards unique and brings a personal element them.
+
+          The full source code is so someone could read or reference the code without
+          needing to have it open on a computer editor.
+
+          Each of these are optional but I found that code along isn't physically different
+          enough to be a good label and that a drawing alone skips over important details of how things actually work.
+        </p>
+
+        <strong>Program sensing stand</strong>
+        <p>
+          Program cards are put on a stand that consists of an RFID sensor, some buttons,
+          and an electronic board that tells the computer the ID of cards via USB.
+          It could be made using the editor which I think is really cool.
+          Causes the front of the program card to be printed and another prints the full source code.
+        </p>
+
+        <strong>Code Editor</strong>
+        <p>
+          When creating something new or making edits more than just swapping a card, a text editor is used.
+          I have a custom text editor so it could better integrate with the program stand,
+          the board, and the code printer.
+        </p>
+        <p>
+          There is no "open file" action because source code is shown when a board is plugged
+          in or when a new card is put on the stand.
+
+          When a program card is swapped it takes care of writing the program card to the plugged in board.
+
+          The editor is a "programmable space" program in that it makes claims and subscriptions to the room broker
+          to get program source code, editor source code, and wish code would be thermal printed.
+
+          There is also a built in serial monitor because that is the staple of debugging for code on electronic boards.
+
+          The editor and the computer running the editor are meant to be always-on to lower the activation energy for making something.
+        </p>
+        <p>
+          I wanted to make a custom full-screen text editor to have more control of the aesthetics
+          and to change the perception of what the device was (i.e. it's not a full computer).
+          I decided against this because the code editing experience is so much more than just
+          a text editor: copying resource files to the board, reading tutorials online, editing
+          images and audio to be used on the board, etc.
+        </p>
+
+        <strong>Printer</strong>
+        <p>
+          Thermal printer is connected to a Raspberry Pi runs a program that listens for
+          wishes to print things from the programmable space.
+          I used a bigger printer so you can have longer line widths and more readable source code.
+          This is nice, but it's a big machine and I wish it was smaller.
+        </p>
+
+        <strong>Proxy</strong>
+        <p>
+          It is fun to make boards to things, but it is a whole next level of cool ideas you can
+          do when the boards can easily communicate with other objects in the room.
+          These other object could be other boards or full graphic programs.
+          I wanted the integration to no require any first time setup (aka typing in WiFi
+          credentials to the board) or require an external internet connection so privacy
+          is less of a concern. A natural fit for this is Bluetooth Low Energy (BLE)
+          which can be found in many electronic boards today and it commonly supported by phones and computers.
+        </p>
+        <p>
+          On the same computer as the editor, there is a background program that automatically
+          connects to any CircuitPython BLE and proxies messages to the rest of the programmable
+          space system. I wrote a CircuitPython library that allows you to write code like
+          `room.claim(`temp is ' + myTemp)` which will serialize that message over BLE and
+          then claimed to the programmable space fact table by the proxy.
+          Similarly objects can listen for changes to the programmable space fact fact. 
+        </p>
+
+        <h4>Demos</h4>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/390751773?byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+          <center><small>TODO Dangling string: Peripheral display</small></center>
+        </p>
+
+        <p>More periphery display ideas: TODO</p>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/390751773?byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+          <center><small>TODO Ooh Ahh: Personal display</small></center>
+        </p>
+
+        <p>More personal display ideas: TODO</p>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/390751773?byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+          <center><small>TODO Button and knob connected to room: play button for Spotify</small></center>
+        </p>
+
+        <p>More room integration ideas: TODO</p>
+
+        <br>
+        <p>
+            If you have thoughts or questions, feel free to email or reach out to me on <a
+                href="https://twitter.com/jhaip">Twitter</a>.
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </body>
+</html>
