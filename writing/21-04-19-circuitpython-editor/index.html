@@ -37,12 +37,12 @@
         </p>
 
         <p>
-            I want to inspire and empower more people to make and personalize electronic objects in their homes.
+            I want to empower people to make periphery, personal, and connected electronic objects in their homes.
             I made a new way to reprogram electronic boards that is good for multiple people casually
             making changes, as opposed to the individualistic making experience today.
-            Boards are reprogrammed by swapping out physical trading card-sized programs. When edits are needed,
-            an integrated text editor is there.
-            Objects are also built from the ground up to be connected to the rest of the room without any setup.
+            Objects are reprogrammed by swapping out physical trading card-sized programs. When edits are needed,
+            an integrated code editor is there.
+            Objects are integrated into the rest of the programmable space with a few extra lines of code.
         </p>
 
         <p>
@@ -57,7 +57,7 @@
           I have used program cards and electronic boards in many of my
           <a href="https://haiperspace.com/writing/20-02-11-rfid-cards/">previous programmable space prototypes</a>,
           but this is the first time I can integrate microcontrollers into the rest of the programmable space without
-          needing a WiFi connection or having to write a proxy application for each board and functionality I want to support.
+          needing a WiFi connection or writing a proxy application for each board and functionality I want to support.
         </p>
 
         <h3>How making electronics today is focused on the individual</h3>
@@ -69,7 +69,7 @@
 
           Secondly, electronic devices themselves hide away their source code and capabilities.
           You may be able to get the current version of code off a device, but not earlier versions or other demos.
-          Trying to understand what the device does and can do requires you to have almost all the same knowledge as the original maker.
+          Trying to understand what a device does and can do requires you to have almost all the same knowledge as the original maker.
           If someone else's goal is to just understand, play, or temporarily change a device's behavior this is a big hurdle.
           People are less likely to collaborate if the barrier to entry is too high or if they fear they will mess up the original maker's work.
         </p>
@@ -129,7 +129,7 @@
           Alice makes a new <i>Programmable Space program</i> for the smiley-face dashboard using
           a different program editor and program card in the room.
           The code Alice wrote for the Bluefruit uses the Programmable Space CircuitPython library so the device could make
-          claims about the soil sensor measurement the room.
+          claims about the soil sensor measurement to the room.
           The dashboard code subscribes to these claims about soil sensor measurements
           to make the smiley-face dashboard live-updating and free of Bluetooth-specific code.
         </p>
@@ -146,7 +146,7 @@ room = Room()
 while True:
     while room.connected():
         room.cleanup()
-        room.claim('soil is {}'.format(analog_in.value))
+        <strong>room.claim('soil is {}'.format(analog_in.value))</strong>
         time.sleep(1)
 </code>
 <small>Alice's soil sensor CircuitPython code.</small>
@@ -158,7 +158,7 @@ while True:
         <p>
           When Bob wants to add the third sensor, Alice tells him to just plug the new board into the Editor
           and put the soil sensor card on the stand. Bob sees there are other program cards on the table
-          and tries out the one labeled "rainbow" which shows a rainbow light pattern on the board.
+          and tries out the one labeled "rainbow." It shows a rainbow light pattern on the board.
           Bob changes the program code on the stand to the soil sensor card and then is ready to add the sensor to his new plant.
         </p>
         <p>
@@ -179,12 +179,12 @@ while True:
         
         <p>
           In the first story, Alice (the original maker) was involved in every step of Bob's changes
-          because the code was on their computer and she had to help Bob get the code and run it.
+          because the code was on her computer and she had to help Bob get the code and run it.
 
           In the second story, Bob had an easier time because he could program boards with
-          existing programs without needing to get access to the code or understand how to edit the source code.
+          existing programs without needing to ask for the code or understand how to edit the source code.
           When a little programming was needed for the smiley-face dashboard changes, the physical program card gave
-          Bob a physical reference that he could easily find later.
+          Bob a physical reference that he could reference later.
           Alice also had an easier time making the dashboard because the programmable space system took care of the Bluetooth
           and data sharing part of this multi-device demo.
         </p>
@@ -232,7 +232,7 @@ while True:
           <a href="https://www.adafruit.com/product/4500">Adafruit CLUE</a>,
           <a href="https://www.adafruit.com/product/4062">Adafruit Feather nRF52840</a>, and the
           <a href="https://www.adafruit.com/product/3500">Trinket M0</a>.
-          Some boards come with built-in sensors or outputs, but for many applications additional wiring and components are needed.
+          Some boards come with built-in sensors or outputs, but for many projects additional wiring and components are needed.
           There are many great kits that make doing a lot of cool things like controlling motors easier,
           but some projects are challenging and improving that side of the making experience is outside the scope of this project.
         </p>
@@ -245,7 +245,7 @@ while True:
         <p>
           Program cards are put on a stand that consists of an RFID sensor, some buttons,
           and an electronic board that tells the CircuitPython Editor computer the ID of cards via USB.
-          One button causes the front of the program card to be printed and another prints the full source code.
+          One button causes the front of the program card to be printed and another button prints the full source code.
           The stand uses a CircuitPython board that was programmed using the CircuitPython editor itself, which I think is cool.
         </p>
 
@@ -257,8 +257,8 @@ while True:
         </p>
         <p>
           When creating something new or making edits more than just swapping a card, a text editor is used.
-          I made a custom text editor so it could better integrate with the program stand,
-          the electronic boards, and the code printer.
+          I made a <a href="https://github.com/jhaip/programmable-space/blob/master/src/programs/1856__circuitPythonEditor.js">custom text editor</a>
+          so it could better integrate with the program stand, the electronic boards, and the code printer.
         </p>
         <p>
           There is no "open file" action because source code is opened when a board is plugged
@@ -279,7 +279,7 @@ while True:
           I used a big thermal printer you'd find in restaurants to get wider line widths and more readable source code.
         </p>
 
-        <h4>Bluetooth Programmable Space Proxy</h4>
+        <h4>Programmable Space Bluetooth Proxy</h4>
         <p>
           It is fun to make individual electronic boards do things,
           but it is cooler when the boards can communicate with other objects in the room.
@@ -289,9 +289,13 @@ while True:
           by many electronic boards, phones, and computers.
         </p>
         <p>
-          On the same computer as the Editor, there is a background program that automatically
-          connects to any CircuitPython BLE device and proxies its messages to the rest of the programmable
-          space system. I made a CircuitPython library that allows you to write code like
+          On the same computer as the Editor, there is a
+          <a href="https://github.com/jhaip/programmable-space/blob/master/src/programs/1853__bleProxyNoble.js">background program</a>
+          that automatically
+          connects to all CircuitPython BLE devices and proxies their messages to the rest of the programmable
+          space system. I made a
+          <a href="https://github.com/jhaip/programmable-space/blob/master/experimental/progspace_room.py">CircuitPython library</a>
+          that allows you to write code like
           <span class="fact">room.claim("temp is " + myTemp)</span> that takes care of serializing that message over BLE
           and having the fact shared to the programmable space via the proxy.
           Similarly, the CircuitPython library and proxy allows devices to listen for changes to the programmable space fact table. 
@@ -307,10 +311,10 @@ while True:
         <h4>Peripheral Display: Dangling String</h4>
 
         <p>
-          The first kind of object that I want to help more people make is displays intended to live in the background.
+          The first kind of object that I want to empower people to make are displays intended to live in the background.
           By using periphery senses, they are calming and not exhausting like looking at a screen in your foreground.
           <a href="https://tangible.media.mit.edu/project/tangible-bits/">Ishii's "Tangible Bits"</a> and
-          <a href="https://calmtech.com/papers.html">Weiser's "Calm Technology"</a> are influences here.
+          <a href="https://calmtech.com/papers.html">Weiser's "Calm Technology"</a> are big influences.
           Making a display for the periphery should be as easy as showing graphics on a computer screen.
         </p>
         <p>
@@ -390,6 +394,9 @@ while True:
         </p>
 
         <br>
+        <p>
+          Check out more programmable space demos at <a href="https://programmable.space/">programmable.space</a>.
+        </p>
         <p>
             If you have thoughts or questions, feel free to email or reach out to me on <a
                 href="https://twitter.com/jhaip">Twitter</a>.
