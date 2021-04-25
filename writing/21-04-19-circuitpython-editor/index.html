@@ -29,9 +29,9 @@
         <img src="banner.jpg" alt="setup" class="gallery-imagee" />
     </p>
         <h1>CircuitPython Editor</h1>
-        <p><small>April 24, 2021</small></p>
+        <p><small>April 25, 2021</small></p>
 
-        <p>I am exploring the idea of "programmable spaces" &mdash; where the concept of a computer is expanded outside a little
+        <p>I am exploring the idea of "<a href="https://programmable.space/">programmable spaces</a>" &mdash; where the concept of a computer is expanded outside a little
         rectangular screen to fill the entire room. Interacting with the programmable space means using physical objects, not
         virtual ones on a screen. Bringing computing to the scale of a room makes it a communal and social experience.
         </p>
@@ -39,10 +39,10 @@
         <p>
             I want to inspire and empower more people to make and personalize electronic objects in their homes.
             I made a new way to reprogram electronic boards that is good for multiple people casually
-            making changes to the objects, as opposed to the individualistic making experience today.
+            making changes, as opposed to the individualistic making experience today.
             Boards are reprogrammed by swapping out physical trading card-sized programs. When edits are needed,
             an integrated text editor is there.
-            Objects are also build from the ground up to be connected to the rest of the room without any setup.
+            Objects are also built from the ground up to be connected to the rest of the room without any setup.
         </p>
 
         <p>
@@ -50,7 +50,7 @@
                   src="https://player.vimeo.com/video/541064361?byline=0&portrait=0"
                   style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
                   allowfullscreen></iframe></div>
-          <center><small>Programming a Rasbperry Pi Pico by swapping cards, editing code, and printing updated code.</small></center>
+          <small>Programming a Raspberry Pi Pico by swapping cards, editing code, and printing updated code.</small>
         </p>
 
         <p>
@@ -60,25 +60,24 @@
           needing a WiFi connection or having to write a proxy application for each board and functionality I want to support.
         </p>
 
-        <h3>How programming electronics is focused on the individual</h3>
+        <h3>How making electronics today is focused on the individual</h3>
 
         <p>
           Firstly, code is saved and edited on the original maker's personal computer.
           If someone else wants to see or edit code they have to deal with sharing and permission issues of
-          getting someone else's code to their computer and learning how to edit it.
+          getting someone else's code on their personal computer.
 
           Secondly, electronic devices themselves hide away their source code and capabilities.
-          You may be able to get the current version of the code off a device, but not earlier versions or other demos.
+          You may be able to get the current version of code off a device, but not earlier versions or other demos.
           Trying to understand what the device does and can do requires you to have almost all the same knowledge as the original maker.
-          If someone else's goal is to just understand, play, or temporarily change a devices's behavior this is a big hurdle.
-          These hurdles can make a fear of messing up the original maker's work and so other people are less likely
-          to try and collaborate on it.
+          If someone else's goal is to just understand, play, or temporarily change a device's behavior this is a big hurdle.
+          People are less likely to collaborate if the barrier to entry is too high or if they fear they will mess up the original maker's work.
         </p>
 
         <p>
-          When doing "serious work", it makes sense that programming revolves around a single person's computer,
-          but I think shared spaces would benefit from trading a little bit of original maker efficiency for a
-          more inviting experience for other people sharing the space.
+          When doing "serious work" it makes sense that programming revolves around a single person's computer
+          but I think shared spaces would benefit from trading a little bit of the original maker's efficiency for a
+          more inviting experience to potential collaborators.
         </p>
 
         <h3>A story about roommates making plant soil sensors</h3>
@@ -87,89 +86,106 @@
           Let's imagine Alice and Bob are living together and they have some plants.
           Bob keeps forgetting to water the plants so they come up
           with an idea for a soil moisture sensor that glows red when the soil is dry.
-        </p>
-        <p>
-          They could just write it down on paper but it would be cooler to make someone themselves that was a little smarter than paper.
-          They could just buy a "smart IoT plant sensor" but then they have to deal with the hassle or another account and phone app
+          They could just buy a "smart IoT plant sensor" but then they have to deal with the hassle of another account and phone app
           when what they want sounds pretty simple.
         </p>
 
-        <h4>The status quo</h4>
+        <h4>How it would be done today</h4>
 
         <p>
-          Alice is the more enthusiatic maker and so they buy a couple
+          Alice is the more enthusiastic maker and so she buys a couple
           <a href="https://www.sparkfun.com/products/13322">soil moisture sensors</a> and a few
-          <a href="https://www.adafruit.com/product/4333">Circuit Playground Bluefruit</a> boards which supports Bluetooth and
-          can be programmed with CircuitPython.
-          They write some CircuitPython code using the Mu editor on their computer and save different versions
-          and tests to their computer's Desktop as they are working on the first sensor.
-          After the first sensor works, they plug in the second Bluefruit board and program it with the working code they have saved on their Desktop.
+          <a href="https://www.adafruit.com/product/4333">Circuit Playground Bluefruit</a> boards that support Bluetooth and
+          can be programmed with <a href="https://circuitpython.org/">CircuitPython</a>.
+          She writes some CircuitPython code on her computer and saves different versions to her computer's Desktop.
+          After the first sensor works, Alice plugs in the second Bluefruit board and programs it with the working code she has saved on her Desktop.
           Alice then has the idea to make a dashboard that shows a smiling or frowning face to represent the status of each plant.
-          They write some hacky code that is good enough to run on their computer.
+          Alice writes some hacky code that is good enough to run on her computer.
         </p>
         <p>
-          A few weeks later, Bob buys another plant and wants to add in the same soil sensor and add it to the dashboard Alice set up.
-          Bob is not an experienced maker and so they have no idea where to start or how the other two sensors work today.
-          Alice emails Bob the code file they need to program the new soil sensor their personal computer.
-          With Alice telling Bob what to do other their shoulder, they are able to get the code running on the third sensor.
+          A few weeks later, Bob buys another plant and wants to make another soil sensor and add it to the dashboard Alice set up.
+          Bob is not an experienced maker and so he has no idea where to start or how the other two sensors work today.
+          Alice emails Bob the code Bob needs to program the new soil sensor on his personal computer.
+          With Alice telling Bob what to do over his shoulder, they are able to get the code running on the third sensor.
           Integrating the third sensor into the dashboard display is more annoying. Alice's code doesn't work on Bob's computer
-          right away and it's easier for Alice to just make the change on their computer.
-        </p>
-        <p>
-          <img src="two-computers-editing.jpg" alt="setup" class="gallery-imagee" />
+          right away and it's easier for Alice to just make the change on her computer.
         </p>
 
         <h4>How it could have been different</h4>
 
         <p>
-          Alice makes the first soil sensor using the CircuitPython Editor in the room.
-          They plug in the Bluefruit board into the Editor computer and then place a blank "program card" on a stand next to the editor.
+          Alice makes the first soil sensor using the <i>CircuitPython Editor</i> in the room.
+          She plugs in the Bluefruit board into the Editor computer and then places a blank <i>program card</i> on a <i>stand</i> next to the Editor.
           The code Alice writes is automatically associated with the program card on the stand.
           After the code is working, Alice adds the printed source code and a little drawing to the program card so that is identifiable.
-          Placing a new program card on the stand automatically copies to the electronic board plugged into the CircuitPlayground Editor
-          so programming the second soil sensor is as easy as plugging in the new board and placing the soil sensor program card on the stand.
+          Placing a new program card on the stand automatically copies the code to the electronic board plugged into the Editor
+          so programming the second soil sensor is as easy as plugging in the second Bluefruit and placing the soil sensor program card on the stand.
         </p>
         <p>
           <img src="programming-soil-sensor.jpg" alt="setup" class="gallery-imagee" />
+          <small><i>Left</i>: Bluefruit board connected to soil sensor. <i>Middle</i>: "Soil sensor" card on stand. <i>Right</i>: Editor</small>
         </p>
         <p>
-          Alice makes a new Programmable Space program for the smiley-face dashboard using
+          Alice makes a new <i>Programmable Space program</i> for the smiley-face dashboard using
           a different program editor and program card in the room.
-          A CircuitPython library and corresponding proxy allows the Bluefruit to make claims about the soil sensor value to the Programmable Space
-          without writing any Bluetooth code. The dashboard code can subscribe to these claims about soil sensor
-          values to make the smiley-face dashboard live updating and free of Bluetooth-specific code.
+          The code Alice wrote for the Bluefruit uses the Programmable Space CircuitPython library so the device could make
+          claims about the soil sensor measurement the room.
+          The dashboard code subscribes to these claims about soil sensor measurements
+          to make the smiley-face dashboard live-updating and free of Bluetooth-specific code.
+        </p>
+        <p>
+<code>import time
+import board
+import analogio
+from progspace_room import Room
+from analogio import AnalogIn
+
+analog_in = AnalogIn(board.A2)
+room = Room()
+
+while True:
+    while room.connected():
+        room.cleanup()
+        room.claim('soil is {}'.format(analog_in.value))
+        time.sleep(1)
+</code>
+<small>Alice's soil sensor CircuitPython code.</small>
         </p>
         <p>
           <img src="making-smiley-dashboard.jpg" alt="setup" class="gallery-imagee" />
+          <small>Smiley-face dashboard and text editor program cards being shown on a small screen.</small>
         </p>
         <p>
-          When Bob wants to add the third sensor, Alice tells them to just plug in the new board
-          and put the soil sensor card on the stand. Bob sees there are other program cards next to the editor
+          When Bob wants to add the third sensor, Alice tells him to just plug the new board into the Editor
+          and put the soil sensor card on the stand. Bob sees there are other program cards on the table
           and tries out the one labeled "rainbow" which shows a rainbow light pattern on the board.
-          Bob changes the program code on the stand to the soil sensor card and then is ready to add the sensor to the new plant.
+          Bob changes the program code on the stand to the soil sensor card and then is ready to add the sensor to his new plant.
         </p>
         <p>
           <img src="other-demos-than-soil-sensor.jpg" alt="setup" class="gallery-imagee" />
+          <small>Looking at other program cards that can be run on the Bluefruit board.</small>
         </p>
         <p>
           To edit the smiley-face dashboard, Alice shows Bob the program card for the dashboard and the text editor card used to edit the code.
           This change involves editing some code Bob doesn't really understand, but luckily the
-          change only involved copying a few lines of code out of the 30 lines of code for whole program.
+          change only involved copying a few lines of code out of the 30 lines of code for the whole program.
         </p>
         <p>
           <img src="plant-card-and-dashboard.jpg" alt="setup" class="gallery-imagee" />
+          <small>Plant soil moisture level being shown on the smiley-face dashboard.</small>
         </p>
 
         <h4>Summary</h4>
         
         <p>
           In the first story, Alice (the original maker) was involved in every step of Bob's changes
-          because the code was on their computer and they had to help Bob get the code and run it.
+          because the code was on their computer and she had to help Bob get the code and run it.
 
-          The second story involved a simiilar process for the Alice but Bob had an easier time
-          because they had ways to make basic changes without needing to understanding programming the boards on their own computer.
-          When a little programming was needed for the smiley-face dashboard changes, they had a physical reference to keep them grounded.
-          Alice also had an easier time making the dashboard because the programmable space system tool care of the Bluetooth
+          In the second story, Bob had an easier time because he could program boards with
+          existing programs without needing to get access to the code or understand how to edit the source code.
+          When a little programming was needed for the smiley-face dashboard changes, the physical program card gave
+          Bob a physical reference that he could easily find later.
+          Alice also had an easier time making the dashboard because the programmable space system took care of the Bluetooth
           and data sharing part of this multi-device demo.
         </p>
 
@@ -177,9 +193,9 @@
 
         <h4>Program cards</h4>
         <p>
-          Program cards are just physical representation of code in a file on some computer.
+          Program cards are a physical representation of code in a file on some computer.
           Physical representation is important so you can put the code physically next to
-          the object you want to edit and see the options you have.
+          the object you want to edit and build a "kinesthetic understanding."
         </p>
 
         <p>
@@ -191,13 +207,13 @@
           and a trading-card like front where you can make a drawing and write a short
           description of what the code does.
           
-          The drawing makes the physical cards unique and brings a personal element them.
+          The drawing makes the physical cards unique and brings a personal element to them.
 
-          The full source code is so someone could read or reference the code without
+          The full source code is so someone could reference the code without
           needing to have it open on a computer editor.
 
           Each of these are optional but I found that code alone isn't physically different
-          enough to be a good label and that a drawing alone skips over important details of how things actually work.
+          enough to be a good label and that a drawing alone skips over important details about how things actually work.
         </p>
 
         <h4>Electronic Boards</h4>
@@ -216,7 +232,7 @@
           <a href="https://www.adafruit.com/product/4500">Adafruit CLUE</a>,
           <a href="https://www.adafruit.com/product/4062">Adafruit Feather nRF52840</a>, and the
           <a href="https://www.adafruit.com/product/3500">Trinket M0</a>.
-          Some boards come with built in sensors or outputs, but for many applications additional wiring and components are needed.
+          Some boards come with built-in sensors or outputs, but for many applications additional wiring and components are needed.
           There are many great kits that make doing a lot of cool things like controlling motors easier,
           but some projects are challenging and improving that side of the making experience is outside the scope of this project.
         </p>
@@ -228,106 +244,105 @@
         </p>
         <p>
           Program cards are put on a stand that consists of an RFID sensor, some buttons,
-          and an electronic board that tells the computer the ID of cards via USB.
-          The stand uses a CircuitPython board that was programmed using the same editor it is part of
-          and I think that is cool.
+          and an electronic board that tells the CircuitPython Editor computer the ID of cards via USB.
           One button causes the front of the program card to be printed and another prints the full source code.
+          The stand uses a CircuitPython board that was programmed using the CircuitPython editor itself, which I think is cool.
         </p>
 
         <h4>Code Editor</h4>
 
         <p>
           <img src="editor-and-printer.jpg" alt="setup" class="gallery-imagee" />
+          <small>Full editing setup. <i>From left to right</i>: RPi Pico board being edited, program stand, Editor, Printer.</small>
         </p>
         <p>
           When creating something new or making edits more than just swapping a card, a text editor is used.
-          I have a custom text editor so it could better integrate with the program stand,
-          the board, and the code printer.
+          I made a custom text editor so it could better integrate with the program stand,
+          the electronic boards, and the code printer.
         </p>
         <p>
-          There is no "open file" action because source code is open when a board is plugged
-          in or when a new card is put on the stand.
+          There is no "open file" action because source code is opened when a board is plugged
+          in or when a new program card is put on the stand.
 
           The editor communicates with the programmable space system to
           get program source code and make claims wishing code would be printed.
 
-          There is also a built in serial monitor because that is the use of debugging code and build errors.
+          There is also a built-in serial monitor for debugging the CircuitPython code and build errors.
 
-          The editor and the computer running the editor are meant to be always-on to lower the activation energy for making something.
-        </p>
-        <p>
-          I originally wanted to make a custom full-screen text editor to have more control of the aesthetics
-          and to change the perception of what the device was (i.e., not a traditional computer).
-          I decided against this because the code editing experience is so much more than just
-          a text editor: copying resource files to the board, reading tutorials online, and editing
-          images and audio to be used on the board.
+          The editor and the computer running the editor are meant to be always-on to lower the activation energy needed for making something.
         </p>
 
         <h4>Printer</h4>
         <p>
           A thermal printer is connected to a Raspberry Pi that runs a program that listens for
           wishes to print things from the programmable space.
-          I used a big thermal printer to get wider line widths and more readable source code.
+          I used a big thermal printer you'd find in restaurants to get wider line widths and more readable source code.
         </p>
 
         <h4>Bluetooth Programmable Space Proxy</h4>
         <p>
-          It is fun to make individual electronic boards do things, but it is a whole next level of cool ideas you can
-          do when the boards can easily communicate with other objects in the room.
-          These other object could be other boards or full graphic programs.
-          I wanted the integration to no require any first time setup (aka typing in WiFi
-          credentials to the board) or require an external internet connection so privacy
-          is less of a concern. A natural fit for this is Bluetooth Low Energy (BLE)
-          which can be found in many electronic boards today and it commonly supported by phones and computers.
+          It is fun to make individual electronic boards do things,
+          but it is cooler when the boards can communicate with other objects in the room.
+          I wanted the integration to require no first time setup and not require an Internet connection
+          so data stays local.
+          Bluetooth Low Energy (BLE) was a good fit because it is supported
+          by many electronic boards, phones, and computers.
         </p>
         <p>
-          On the same computer as the editor, there is a background program that automatically
-          connects to any CircuitPython BLE and proxies messages to the rest of the programmable
-          space system. I wrote a CircuitPython library that allows you to write code like
-          `room.claim(`temp is ' + myTemp)` which will serialize that message over BLE and
-          then claimed to the programmable space fact table by the proxy.
-          Similarly objects can listen for changes to the programmable space fact fact. 
+          On the same computer as the Editor, there is a background program that automatically
+          connects to any CircuitPython BLE device and proxies its messages to the rest of the programmable
+          space system. I made a CircuitPython library that allows you to write code like
+          <span class="fact">room.claim("temp is " + myTemp)</span> that takes care of serializing that message over BLE
+          and having the fact shared to the programmable space via the proxy.
+          Similarly, the CircuitPython library and proxy allows devices to listen for changes to the programmable space fact table. 
         </p>
 
         <h3>Demos</h3>
 
-        <h4>Peripheral display: Dangling string</h4>
-
         <p>
-          The first kind of object that I want to help more people make is displays of information
-          that use peripheral or background senses so the are calming and not exhausting like looking at a screen in your foreground.
-          I find the ideas of tangible bits paper and Weisner's "calm technology" ideas inspiring and the goal
-          of the CircuitPython editor is and programmble space is to make it as easy to make a display for the periphery as it is to
-          show something on a computer screen.
-        </p>
-        <p>
-          <center><img src="tangible-bits-periphery.jpg" alt="setup" class="gallery-imagee" /></center>
-          <center><small>Graphic from Tangible Bits TODO add reference</small></center>
+          I'd like to highlight three demos showing three types of objects that I want to help more people make:
+          peripheral displays, personal objects, and connected objects.
         </p>
 
+        <h4>Peripheral Display: Dangling String</h4>
+
         <p>
-          In this "Dangling String" demo (inspired by Natalie Jeremijenko's work of the same name)
-          uses a Trinket M0 board wired to a motor with a blue ribbon attached to it. The Trinket M0 was programmed
-          using the CircuitPython editor to twirl the ribbon every 5 minutes as a calm and subtle way to notice the passage of time.
+          The first kind of object that I want to help more people make is displays intended to live in the background.
+          By using periphery senses, they are calming and not exhausting like looking at a screen in your foreground.
+          <a href="https://tangible.media.mit.edu/project/tangible-bits/">Ishii's "Tangible Bits"</a> and
+          <a href="https://calmtech.com/papers.html">Weiser's "Calm Technology"</a> are influences here.
+          Making a display for the periphery should be as easy as showing graphics on a computer screen.
+        </p>
+        <p>
+          <center><img src="tangible-bits-periphery.png" alt="setup" class="gallery-imagee" /></center>
+          <center><small>
+            Graphic from the <a href="https://trackr-media.tangiblemedia.org/publishedmedia/Papers/331-Tangible%20Bits%20Towards%20Seamless/Published/PDF">Tangible Bits CHI '97 paper</a> by Ishii and Ullmer
+          </small></center>
         </p>
 
         <p>
-          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+          This "Dangling String" demo (inspired by <a href="https://en.wikipedia.org/wiki/Natalie_Jeremijenko">Natalie Jeremijenko</a>'s work of the same name)
+          uses a Trinket M0 board wired to a motor with a long blue ribbon attached to it. The Trinket M0 was programmed
+          using the CircuitPython Editor to twirl the ribbon every 5 minutes as a subtle way to hear and see the passage of time.
+        </p>
+
+        <p>
+          <div style="padding:76.25% 0 0 0;position:relative;"><iframe
                   src="https://player.vimeo.com/video/403876366?byline=0&portrait=0"
                   style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
                   allowfullscreen></iframe></div>
-          <center><small>Dangling string twirling</small></center>
+          <center><small>Dangling String twirling</small></center>
         </p>
         <p>
           <img src="dangling-string-electronics.jpg" alt="setup" class="gallery-imagee" />
-          <center><small>Dangling string electronics. The source of the purple light is the tiny Trinket M0 that is running the code.</small></center>
+          <small>Dangling String electronics. The source of the purple light is the Trinket M0 running the code.</small>
         </p>
 
         <h4>Personal Objects: Singing Faces</h4>
 
         <p>
-          The second type of objects that I want to help more people make is personal objects:
-          things that use art and samples from people you know to make the objects special to the people in the space.
+          The second type of object that I want to help more people make is personal objects:
+          things that use art and samples from people you know to make things special to the people in the space.
           In this demo some handmade ceramic blobs sing using recorded voices of my family.
         </p>
 
@@ -336,39 +351,42 @@
                   src="https://player.vimeo.com/video/541141677?byline=0&portrait=0"
                   style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
                   allowfullscreen></iframe></div>
-          <center><small>Singing demo. Audio quality is low, but it's still a funny demo.</small></center>
+          <small>Singing demo. Audio quality is low, but it's still a funny demo.</small>
         </p>
         <p>
             <img src="singing-faces-electronics.jpg" alt="setup" class="gallery-imagee" />
-            <center><small>Electronics inside the singing heads: An Adafruit Circuit Playground Express connected to an audio amplifier that is hidden inside the head.</small></center>
+            <small>
+              Electronics inside the singing heads: A Circuit Playground Express board connected to an audio amplifier that is hidden inside the head.
+            </small>
         </p>
 
-        <h4>(Locally) Connected Objects: Basic clock</h4>
-
-        <p>
-          Finally, I want to help more people make objects that can be integrate with the rest of the devices in the room.
-          The earlier plant soil sensor showed sensors claiming facts to the programmable space but in this demo the
-          Circuit Playground Bluefruit board subscribes to the fact "time is $X" in the room and displays it on the lights on the board.
-          Behind it, there is another programmable space program that also subscribes to the same fact and displays the time as text on a screen.
-          I think people have tunnel vision that screens are the only way to display information and I hope my making it easy to
-          integrate electronic boards to a space that people will begin to thinking bigger.
-        </p>
-        <p>
-          I think it's also useful to compare this to products like Adafruit.IO that claim to help people make connected devices.
-          These services require Internet connectivity, creating accounts, sharing data with third parties, and sometimes paying money
-          so I feel a better solution would be local to the devices.
-          Although Internet connectivity is common, in my experience WiFi signals are too spotty for these small electronic boards
-          to work in every room of the home and I have wasted far too much time trying to update and program WiFi credentials into every device
-          where I got fed up with it. 
-          In project and programmable spaces intentionally uses Bluetooth and local network connections so that no Internet connection is required.
-        </p>
+        <h4>(Locally) Connected Objects: Basic Clock</h4>
 
         <p>
           <div style="padding:56.25% 0 0 0;position:relative;"><iframe
-                  src="https://player.vimeo.com/video/541141677?byline=0&portrait=0"
+                  src="https://player.vimeo.com/video/541151324?byline=0&portrait=0"
                   style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
                   allowfullscreen></iframe></div>
-          <center><small>TODO Button and knob connected to room: play button for Spotify</small></center>
+          <small>Showing time on a screen (top) and on a Circuit Playground Bluefruit board (bottom).</small>
+        </p>
+
+        <p>
+          Finally, I want to help more people make objects that can integrate with the rest of the devices in the room.
+          In this demo a Circuit Playground Bluefruit board subscribes to the fact <span class="fact">time is $X</span>
+          in the programmable space and displays it on the lights on the board.
+          Behind it, there is another programmable space program that subscribes to the same fact and displays the time as text on a screen.
+          The Bluefruit board could have just as easily been connected to a motor to display the time like an analog clock.
+
+          I hope making it easier to integrate electronic boards with a space will inspire people to show information
+          in more ways than just graphics on a screen.
+        </p>
+        <p>
+          I think it's also useful to compare my CircuitPython Editor and Programmable Space to products like
+          <a href="https://io.adafruit.com/">Adafruit.IO</a> that claim to help people make connected devices.
+          While I am generally a fan, these services require Internet connectivity, creating accounts, sharing data with third parties, and sometimes paying money.
+          I feel a better solution wouldn't have any of those requirements.
+          Although Internet connectivity is common, in my experience WiFi signals are too spotty for these small electronic boards
+          to work in every room of the home and I have wasted far too much time updating WiFi credentials on all of my devices.
         </p>
 
         <br>
