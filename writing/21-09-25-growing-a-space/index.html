@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+        .system-code {
+            color: purple;
+        }
+        .code-comment {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+        
+        <h1>Growing a Programmable Space</h1>
+        <p><small>September 25, 2021</small></p>
+
+        <p>
+            <img src="hello_world_aruco.gif" alt="setup" class="gallery-image" />
+        </p>
+
+        <p>
+          Recently I have been wishing that more people could make cool programmable space demos like
+          <a href="https://twitter.com/jhaip/status/1299815186493300740">musical posters</a> or
+          <a href="https://haiperspace.com/writing/21-04-19-circuitpython-editor/">custom plant watering dashboards</a>.
+          However when I tried to write tutorials for them I realized how complex things had become.
+          Does my goal of expanding the idea of a computer outside a little rectangle screen come
+          at the cost of making computing more complicated? Most demos I do now use multiple computers, custom electronics, and custom 3D prints
+          but I am able to understand it because I have grown with my space.
+          The video
+          <a href="https://www.youtube.com/watch?v=-GV814cWiAw&t=183s">"Can we Improve Tutorials for Complex Games?"</a>
+          from the Game Maker's Toolkit channel gave me a
+          burst of inspiration to make it clearer how someone can grow a programmable space from something simple.
+        </p>
+
+        <p>
+          The video talks about how strategy games like
+          <a href="https://www.gamespot.com/reviews/a-total-war-saga-troy-review-my-kingdom-for-a-cent/1900-6417534/">A Total War Saga: Troy</a>
+          require learning a lot of information
+          before playing the game and how trying to explain all the concepts before getting to play isn't fun.
+          The suggestion that resonated with me the most was making a simpler, but complete game and then extending it with
+          expansion packs or new game elements later. The game <a href="https://dinopoloclub.com/games/mini-metro/">Mini Metro</a>
+          is an example of a game that does this. Mini Metro is a strategy simulation game about designing a subway map for a growing city.
+          The game starts out with just a couple types of roads. As the game progresses, types are
+          added to build complexity and more interesting challenges only after you have had more play time.
+          This also reminds me of Gall's Law: "all complex systems that work evolved from simpler systems that worked."
+        </p>
+
+        <p>
+          <center><img src="mini-metro-progression.png" alt="progression" class="gallery-imagee" /></center>
+          <center><small><i>Top</i>: Early game in Mini Metro. <i>Bottom</i>: Late game in Mini Metro</small></center>
+        </p>
+
+        <p>
+          Examples of complexity that I have grown into but would make someone new to a programmable space
+          frustrated and overwhelmed:
+        </p>
+        <ul class="dashed">
+          <li>Calibrating a projector and camera for projection mapping</li>
+          <li>Setting up and managing multiple computers</li>
+          <li>3D printing or wiring anything</li>
+          <li>(Plus the cost of buying all these things)</li>
+        </ul>
+
+        <h4>A simpler start to a Programmable Space</h4>
+
+        <p>
+          I have been working on a simpler way to get started with Programmable Space that
+          runs on a single computer, doesn't require a projector,
+          and requires no calibration while still achieving the
+          goal of making programs physical objects. 
+        </p>
+
+        <p>
+          <strong>Updated tutorial: <a href="https://github.com/jhaip/programmable-space#starting-the-broker-boot-programs-and-sensing-programs">Getting Started with a Programmable Space</a></strong>
+        </p>
+
+        <p>
+          <center><img src="basic_desk_setup.jpg" alt="Basic Desk Setup" class="gallery-imagee" /></center>
+          <center><small style="max-width: 500px; display: inline-block;">
+            A basic desk setup with a webcam, program cards on the desk, and a monitor to display graphics.
+            <i>Note: projector not required for this setup.</i>
+          </small></center>
+        </p>
+
+        <p>
+          In this simpler setup, I switched from
+          <a href="https://haiperspace.com/writing/20-02-11-rfid-cards/">RFID cards</a> and
+          <a href="https://dynamicland.org/">Dynamicland</a>-style papers with
+          colored dots to ArUco markers taped to trading card sized papers.
+          Computer vision on a webcam image identifies the ArUco markers and that is mapped to which programs should be running.
+          These ArUco paper cards are cheap (as opposed to the RFID cards), robust to challenging lighting conditions (something I struggled with for the colored dot detection),
+          and many can fit on a desk.
+          Ideally physical the programs should also contain their source code, but I relaxed on
+          that idea for this basic setup. This avoids the complexity of printing and most program
+          source code is too long to fit on a card anyways. I also liked the personal element involving 
+          the author's handwriting and drawings.
+        </p>
+
+        <p>
+          <center><img src="aruco-card.jpg" alt="basic aruco card" class="gallery-imagee" /></center>
+          <center><small>Program 2024 (Draw big rectangle) associated with ArUco marker #16</small></center>
+        </p>
+
+        <p>
+          For this simpler setup I also switched the programs used to edit programs, show graphics, and debug
+          programs from being made within the
+          programmable space system to using a web page interface. It is possible and cooler to build
+          all of these tools within the programmable space's inputs and outputs but integrating things like graphics and keyboard inputs add complexity.
+          With a browser, all of these things come for free at the cost of keeping people in the "traditional single screen and single keyboard" mode
+          that programmable spaces are trying to break away from.
+        </p>
+
+        <h4>Growing a Programmable Space</h4>
+
+        <p>
+          Next, I thought about how to grow a programmable space from this simpler start.
+          The first jump in complexity comes in choosing to add projected augmented reality, use multiple computers,
+          or program microcontrollers. After that, each of these areas can be combined and extended.
+        </p>
+
+        <p>
+          <img src="progression.png" alt="progression" class="gallery-imagee" />
+          <center><small>
+            Each extension is explained more in the <a href="https://github.com/jhaip/programmable-space/blob/master/docs/growing-a-space.md">growing a space guide on Github</a>.
+          </small></center>
+        </p>
+
+        <p>
+          An example progression that I would do if I started over:
+          <ol>
+            <li>Start with the basic setup. Make some simulations or games where the cards placed on the
+              table influence the graphics on the screen like a
+              <a href="https://twitter.com/jhaip/status/1237577165731840000">Turtlebot simulation</a>.
+            </li>
+            <li>Add support for microcontrollers. Make a
+              <a href="https://twitter.com/jhaip/status/1246211983269126146">dangling string</a> and
+              some lights that turn blue when it's going to rain soon.
+            </li>
+            <li>
+              Buy a Raspberry Pi and a thermal printer so that programs in the room can wish things would be printed.
+              Have it print out RSS feeds and journaling prompts like
+              the <a href="https://nordprojects.co/projects/littleprinters/">Little Printer</a> product.
+            </li>
+            <li>
+              Integrate the thermal printer with the microcontroller editor so I can attach
+              program source code to the program cards.
+            </li>
+            <li>
+              Buy a projector and set up projected AR on a desk.
+              Make a dynamic photobook like <a href="https://twitter.com/mandy3284/status/907825857615380480">this</a>
+              or <a href="https://omar.website/posts/against-recognition/">this</a>.
+            </li>
+            <li>Buy another projector, webcam, and Raspberry Pi to make
+              <a href="https://twitter.com/jhaip/status/1299815186493300740">Musical Posters</a>
+              with laser pointer regions.
+            </li>
+            <li>
+              Find a big table and set up Dynamicland-style colored dot papers. Move program source code editing to the papers and get rid of monitors to make the experience more communal.
+            </li>
+            <li>Expand to multiple walls and tables using multiple computers.</li>
+          </ol>
+        </p>
+
+        <p>
+          Every programmable space should be different and match the people in the space.
+          I have a background in making electronics and product design so I have played in those areas.
+          Other people could be more interested in making musical instruments, augmenting their existing school lessons,
+          making escape-the-room games, etc. Each of these would have a totally different progression but I think the
+          core concepts of a programmable space transfer well to all of them.
+        </p>
+
+        <p>
+          <center><img src="projected-ar-desk.png" alt="projected AR desk" class="gallery-imagee" /></center>
+          <center><small>A projected AR desk setup with the code editor open on the monitor.</small></center>
+        </p>
+
+        <p>
+          If you are interested, try setting up the basic space by following the instructions in the <a href="https://github.com/jhaip/programmable-space">programmable-space README</a>.
+          And then you can read <a href="https://github.com/jhaip/programmable-space/blob/master/docs/growing-a-space.md">my notes about how I extended my programmable space</a>.
+          I will continue making programmable objects in my own space but I would also like to help other people start their own spaces!
+        </p>
+
+        <br>
+        <p>
+          Check out more programmable space demos at <a href="https://programmable.space/">programmable.space</a>.
+          If you have thoughts or questions, feel free to email or reach out to me on <a
+                href="https://twitter.com/jhaip">Twitter</a>.
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </body>
+</html>
