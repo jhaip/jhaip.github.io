@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+    <style>
+        .fact {
+            font-family: monospace;
+            background: #fff9cc;
+            padding: 5px;
+        }
+        .system-code {
+            color: purple;
+        }
+        .code-comment {
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+
+        <h1>Programmable Space Floor Lamp</h1>
+        <p><small>October 26, 2021</small></p>
+
+        <p>
+          One problem I have in a programmable space is things looking too "techy" when I want them to be
+          calm &mdash; things that can always be on and out in the room while also not demanding attention to themselves.
+          TVs and monitors are good examples of objects that don't meet this criteria:
+          They are big and ugly when off, you don't want them on all the time,
+          and they demand attention. I like the vision of making computers more like light bulbs: always present, but ignored.
+        </p>
+
+        <p>
+          Previously, I made a programmable space <a href="https://vimeo.com/391765260">augmented reality desk lamp</a>
+          by following
+          <a href="https://www.hackster.io/nord-projects/android-things-lantern-9f0c28">Nord Project's Lantern</a>
+          build but with my programmable space programs running on it.
+          Inside the lamp head was a Raspberry Pi computer, a tiny
+          <a href="https://kdcusa.com/products/uo-smart-beam-laser">projector</a>,
+          and a webcam. I really liked the build, but in practice the
+          projector area only covered a small portion of a desk and the desk lamp
+          form factor didn't work well when pointed horizontally or up at a wall. 
+        </p>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/400827615?loop=1&byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+          <small>The lamp looks awkward sideways and the projection area is only slightly bigger than the calendar.</small>
+        </p>
+
+        <p>
+          I made a new version of the lamp, but in a floor lamp form-factor so that
+          it can be positioned in more places in the room and pointed horizontally.
+          The thing I like the most about this new lamp design is that it's <i>calm</i>:
+          It is silent, does nothing by default, and it enhances
+          things already hanging on the walls.
+        </p>
+
+        <p>
+          <center><img src="lamp-body.jpg" alt="Lamp Head" class="gallery-imagee" /></center>
+          <center><small>
+              Programmable Space Floor Lamp (next to a regular lamp on the left).
+            </small></center>
+        </p>
+        
+        <p>
+          <center><img src="lamp-head.jpg" alt="Lamp Head" class="gallery-imagee" /></center>
+          <center><small>
+              Head of the floor lamp.
+            </small></center>
+        </p>
+
+        <p>
+          I used this new lamp to make an updated
+          <a href="https://vimeo.com/452907856">Musical Posters</a>
+          demo that uses more wall space because the floor lamp is farther away from the wall
+          than the desk lamp could be.
+          Pointing a laser pointer at album art and posters hanging on my wall changes
+          what music is playing in the room.
+          Setting up the demo involves tracing each album art and creating a
+          <a href="https://haiperspace.com/writing/19-09-08-physical-programming/#laser-regions">"laser region"</a>.
+          When a laser pointer goes in a region, the fact "laser in region $ID" is claimed to the programmable space
+          and other programs use this fact to map it to a Spotify song/album/artist and then change the music.
+        </p>
+
+        <p>
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+                  src="https://player.vimeo.com/video/634009429?loop=1&byline=0&portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+                  allowfullscreen></iframe></div>
+        </p>
+
+        
+
+        <h4>Notes about the build for the curious</h4>
+
+        <p>
+          Inside the lamp head is a sandwich of: C920 webcam, 3D printed mount,
+          Raspberry Pi 4, <a href="https://www.nebra.com/products/nebra-anybeam-hat-laser-projector-for-the-raspberry-pi">Nebra Anybeam RPi Projector HAT</a>.
+          The Anybeam projector is only 23 ANSI lumens which isn't really visible in a
+          bright room and the RPi Projector HAT doesn't seem to be in stock any more.
+          If I were to create a new version, I would choose a different projector that was bright enough to be mostly visible in daylight.
+          Unfortunately a brighter projector would also be bigger and probably not silent.
+          The Epson EpiqVision Mini EF11 ($700, 1000 lumens, laser, HD resolution.) might be my next pick.
+        </p>
+
+        <p>
+          <center><img src="cad-annoation.png" alt="3D printed mount CAD" class="gallery-imagee" /></center>
+          <center><small>3D printed mount CAD</small></center>
+        </p>
+
+        <p>
+          I tried to modify several adjustable floor lamps but none of them could support the weight of the
+          electronics (600g / 1.4lbs). I switched to a
+          <a href="https://www.amazon.com/Stage-MS7201B-Round-Microphone-Stand/dp/B0002MJTZ8">microphone stand</a>
+          with a
+          <a href="https://www.amazon.com/gp/product/B06XKW7V14">ball joint</a>
+          (<a href="https://www.amazon.com/Anwenk-Mic-Screw-Microphone-Converter/dp/B079N7Y4FX/141-7245837-3765617">plus this</a>)
+          and that worked much better. The only input is power so in theory
+          I could add a light bulb socket to outlet adapter, plug the Raspberry Pi power
+          supply it, and enclose everything in a "bulb" that could be screwed into any light socket!
+        </p>
+          Other projected AR setups like Dynamicland or museum installations hide projectors and computers
+          in the ceiling. This is nice for big installations with high ceilings, but in a home setting
+          I think ceiling mounted projectors aren't invisible enough to be calm: too loud, too ugly, too in the way.
+          This is why I am especially interested in the floor lamp form-factor and anything that looks
+          like a regular lighting fixture in a home.
+          Another interesting idea from Lightform's <a href="https://lightform.com/lfx">Project LFX</a>
+          is a "steerable projection" where motors change where the projection is pointed in the room
+          as a way to cover more area of the room from a single projector. I like that Project LFX's demos
+          show what projected AR could look like in a home setting.
+        </p>
+
+        <p>
+          The Raspberry Pi inside the floor lamp could run a programmable space broker itself but in my
+          setup it connects to the main programmable space broker
+          computer where all the programs are running.
+          This way it is a little easier to debug and share facts with other objects in the room.
+        </p>
+
+        <p>
+          <center><img src="desk-programs.jpg" alt="progression" class="gallery-imagee" /></center>
+          <center><small>
+            Programs used to build and run the musical posters demo.
+          </small></center>
+        </p>
+
+        <br>
+        <p>
+          Check out more programmable space demos at <a href="https://programmable.space/">programmable.space</a>.
+          If you have thoughts or questions, feel free to email or reach out to me on <a
+                href="https://twitter.com/jhaip">Twitter</a>.
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </body>
+</html>
