@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jacob Haip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <script src="/script.js" defer></script>
+</head>
+
+<body class="writing">
+    <a href="/"><< Home</a>
+
+        <h1>Google Wall Calendar</h1>
+        <p><small>March 28, 2025</small></p>
+
+        <p>
+          I have been working on a new wall calendar that stays in sync with my family's Google Calendars.
+        </p>
+
+        <p>
+          <center><img src="wall-calendar-clear.jpg" alt="Clear Wall Calendar" class="gallery-imagee" /></center>
+          <center><small>
+              My family's whiteboard wall calendar.
+            </small></center>
+        </p>
+
+        <p>
+          If you are thinking that looks like a regular wall calendar: you are correct!
+          That is how it looks 99% of the time but it comes alive when the wall calendar is out of sync with our Google calendars.
+          When there has been a change on a date, a red square is projected onto the wall calendar date to
+          show me that something might need to be written there.
+        </p>
+
+        <p>
+          <center><img src="wall-calendar-notification.jpg" alt="Clear Wall Calendar" class="gallery-imagee" /></center>
+          <center><small>
+              A subtle projected notification on the wall calendar.
+            </small></center>
+        </p>
+
+        <p>
+          I check my phone to see the notification and then update the wall calendar, or
+          clear the notification if doesn't need to be seen all the time.
+          Then the red square automatically goes away and the wall calendar is back to being a normal calendar.
+        </p>
+
+        <p>
+          <center><img src="app-notifications-medium.png" alt="Lamp Head" class="gallery-imagee" style="max-height: 600px" /></center>
+          <center><small>
+              Phone app notification for a new event.
+            </small></center>
+        </p>
+
+        <p>
+          I like the wall calendar because it gives me things Google Calendar does not:
+        </p>
+        <p>
+          <ul class="dashed">
+            <li>Passively helps me see events coming up in the next couple weeks</li>
+            <li>Is handwritten by my family. We can draw pictures, draw deadlines in big text or write minor things small.</li>
+            <li>Aesthetically it's just a wall calendar. I find the “tablet with calendar app open mounted to the wall” too cold to have in my general living space.</li>
+          </ul>
+        </p>
+        <p>
+          My family needs to use Google Calendar to manage events on the go and get reminders and this system is a way to keep doing that while also having an accurate wall calendar.
+        </p>
+
+        <h4>Hardware</h4>
+
+        <p>
+          The projection and sensing comes from a Raspberry Pi + RPi Camera 3 + Projector on top of a nearby bookshelf.
+          The best part is the projector: a tiny MEMS Laser projector (Ultimems HD305D1-C1) that is completely silent.
+          This whole package is small and hidden enough that no one knows there is a tech involved with the wall calendar.
+        </p>
+
+        <p>
+          <center><img src="wall-calendar-projector-system.jpeg" alt="Projector, Camera, RPi" class="gallery-imagee" /></center>
+          <center><small>
+              The projector, camera, and RPi are hidden on a shelf above the wall calendar.
+            </small></center>
+        </p>
+
+        <h4>Software</h4>
+
+        <p>
+          <ul class="dashed">
+            <li>Script that checks for changed calendar events every 5 minutes</li>
+            <li>Web app to see and clear suggested events to write on the wall calendar.</li>
+            <li>Mini Web Apps for doing a manual four point perspective calibration for the Projector and Camera.
+              This was a simple approach because all objects are fixed in place so I calibrated everything a
+              month ago and haven't thought about it since.
+            </li>
+            <li>Script running on Pi to projection map the red highlight squares on the wall calendar.</li>
+          </ul>
+        </p>
+
+        <h4>Computer Vision Challenges</h4>
+
+        <p>I really wanted to be able to get prompted to add a Google Calendar event when I wrote something on the wall
+          calendar, but I have yet to get that to stable enough to leave running all the time.
+          The vision system works well for short periods spans of hours, but leaving it on for a
+          day always results in a couple errors in detection and meaningless notifications.
+        </p>
+
+        <p>Challenges include:</p>
+
+        <p>
+          <ul class="dashed">
+              <li>Lighting changes throughout the day and night.</li>
+              <li>Camera set to use auto focus and auto exposure (generally keeps lighting levels consistent but can momentarily be out of focus or badly exposed)</li>
+              <li>Low camera is low resolution</li>
+              <li>handwritten marks are often low contrast</li>
+              <li>People walk regularly walk or stand in from of the camera</li>
+              <li>Bumping the bookshelf that the camera+projector are on can subtly move the system enough to calibration inaccurate</li>
+              <li>Sometimes light reflections are visible from the whiteboard's surface.</li>
+          </ul>
+        </p>
+
+        <p>
+          <center><img src="camera-sample-1.jpeg" alt="Camera Sample" class="gallery-imagee" /></center>
+          <center><small>
+              Sample camera image.
+            </small></center>
+        </p>
+
+        <p>
+          I have been building up my library of sample images that I validation vision pipeline
+          changes on but need to make more progress here.
+        </p>
+
+        <br>
+
+        <p>
+          Link to the code on Github:
+          <a href="https://github.com/jhaip/calendar-sync">github.com/jhaip/calendar-sync</a>
+        </p>
+
+        <div style="margin-bottom: 5rem"></div>
+        <p><a href="/"><< Home</a></p>
+    </body>
+</html>
